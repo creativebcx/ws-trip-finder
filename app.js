@@ -37,7 +37,6 @@ function startTripFinder() {
 elNextButton.click( function(event) {
 	renderCurrentStep();
 	renderFinalReview();
-	currentSelection();
 	state.currentStep++;
 });
 
@@ -57,12 +56,14 @@ function renderCurrentStep(currentStep) {
 	if (state.currentStep == 1) {
 		elSkillLevelBox.removeClass('hidden');
 		elCalendarBox.addClass('hidden');
+		currentSelectionDate();
 		}
 	if (state.currentStep == 2) {
 		elNextButton.addClass('hidden');
 		elSubmitButton.removeClass('hidden');
 		elFinalReviewBox.removeClass('hidden');
 		elSkillLevelBox.addClass('hidden');
+		currentSelectionAbility();
 	}
 	if (state.currentStep == 3) {
 		elFinalReviewBox.addClass('hidden');
@@ -71,17 +72,19 @@ function renderCurrentStep(currentStep) {
 };
 
 // current selection state memory function
-function currentSelection() {
-	event.preventDefault();
+function currentSelectionDate() {
 	state.currentSelectionDate.push( {
 		date: $('#datepicker').val()
 	});
+	console.log(state.currentSelectionDate[0].date);
+};
+
+function currentSelectionAbility() {
 	state.currentSelectionAbility.push( {
 		abilityLevel: $('#ability-level').val()
 	});
 	console.log(state.currentSelectionAbility[0].abilityLevel);
 };
-
 // render final review before submit function
 
 function renderFinalReview(currentStep) {
