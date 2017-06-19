@@ -12,10 +12,8 @@ var elNextButton = $('#next');
 var elBackButton = $('#back');
 var state = {
 	currentStep: 0,
-	currentSelection: {
-		date: "",
-		abilityLevel: ""
-	}
+	currentSelectionDate: [],
+	currentSelectionAbility: []
 };
 
 // landing page and start button trigger
@@ -33,7 +31,6 @@ function startTripFinder() {
 	elLandingBox.addClass('hidden');
 	elControlBox.removeClass('hidden');
 	elCalendarBox.removeClass('hidden');
-	
 };
 
 // moving forward or backwards with the currentStep function
@@ -46,10 +43,9 @@ elNextButton.click( function(event) {
 
 elBackButton.click( function(event) {
 	renderCurrentStep();
-	if (state.currentStep!=0) {
+	if (state.currentStep != 0) {
 		state.currentStep--;
 		};
-	console.log(state.currentStep);
 });
 
 elSubmitButton.click( function(event) {
@@ -75,18 +71,28 @@ function renderCurrentStep(currentStep) {
 };
 
 // current selection state memory function
-function currentSelection(state) {
-	state.currentSelection.date.append($('#datepicker'));
-	state.currentSelection.abilityLevel.append(elAbilityList);
-	console.log(state.currentSelection);
+function currentSelection() {
+	state.currentSelectionDate.push( {
+		date: $('#datepicker').val()
+	});
+	state.currentSelectionAbility.push( {
+		abilityLevel: $('form').val()
+	});
+	console.log(state.currentSelectionAbility);
 };
 
 // render final review before submit function
+
 function renderFinalReview(currentStep) {
 	if (state.currentStep == 2) {
-	elFinalReviewBox.html('<div>test</div>');
+	elFinalReviewBox.html("<h2>You selected:<br><br></h2>\
+		<p>Date: " + state.currentSelectionDate[0].date + "<br><br></p>\
+		<p>Ability Level: " + state.currentSelectionAbility[0].abilityLevel + "<br><br></p>\
+		<p>Click SUBMIT to search your trips");
 	};
 };
+
+
 
 // currentStep testing function
 $(document).click( function (event) {
