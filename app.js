@@ -116,14 +116,12 @@ $('.scroll-down').click(function(event) {
       $('h2').css("display", "block");
       //$('body').css('background-image', 'none');
   });
-
 // Animation for bot reply so that conversation stays on bot reply screen
 $('input.cleverscriptsubmit').click(function(event) {
       setTimeout(function(){
           $('.cleverscriptreply').animate({scrollTop:$(document).height()}, 1000);
     }, 100);
 });
-
 */
 
 
