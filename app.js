@@ -70,7 +70,7 @@ function renderCurrentStep(currentStep) {
 		elTripBox.removeClass('hidden');
 	}
 };
-
+// change it to an object currentSelectionDate.date = jQuery Element
 // current selection state memory function
 function currentSelectionDate() {
 	state.currentSelectionDate.push( {

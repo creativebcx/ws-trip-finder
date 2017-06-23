@@ -1,0 +1,26 @@
+{
+  "name": "ws-trip-finder-wireframe",
+  "version": "1.0.0",
+  "description": "WS Trip Finder ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativebcx/ws-trip-finder.git"
+  },
+  "author": "Eric_Donley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/creativebcx/ws-trip-finder/issues"
+  },
+  "homepage": "https://github.com/creativebcx/ws-trip-finder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "uuid": "^3.1.0"
+  }
+}
