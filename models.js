@@ -1,58 +1,38 @@
 const uuid = require('uuid');
+const mongoose = require('mongoose');
 
-function StorageException(message) {
-	this.message = message;
-	this.name = "StorageException";
+const tripSchema = mongoose.Schema({
+	nameOfTrip: {type: String, require: true},
+	url: {type: String, require: true},
+	img: {type: String, require: true},
+	description: {type: String, require: true},
+	location: {type: String, require: true},
+	tripDate: {
+		startTrip: {type: String, require: true},
+		endTrip: {type: String, require: true}
+	},
+	abilityLevel: {type: String, require: true},
+	dateEdited: {type: Date, default: Date.now}
+});
+
+tripSchema.virtual('tripDate').get(function() {
+	return `${this.tripDate.start} ${this.tripDate.end}`.trim();
+});
+
+tripSchema.methods.apiRepr = function() {
+	return {
+		id: this._id,
+		nameOfTrip: this.nameOfTrip,
+		url: this.url,
+		description: this.description,
+		location: this.location,
+		tripDate: this.tripDate,
+		abilityLevel: this.abilityLevel
+	};
 }
 
-const searchResults = {
-	create: function(date, ability) {
-		console.log('Creating new WS Trip');
-		const item = {
-			date: date,
-			id: uuid.v4(),
-			ability: ability
-		};
-		this.items[item.id] = item;
-		return item;
-	},
-	get: function() {
-		console.log('Retrieving WS Trip Record');
-		return Object.keys(this.items).map(key => this.items[key])
-	},
-	delete: function(id) {
-		console.log('Deleting WS Trip Record \'${id}\'');
-	},
-	update: function(updatedItem) {
-		console.log('Updating WS Trip Record \'${updatedItem.id}\'');
-		const {id} = updatedItem;
-		if (!(id in this.items)) {
-			throw StorageException(
-				'Cannot update item \'${id}\' because it does not exist.')
-		}
-		this.items[updatedItem.id] = updatedItem;
-		return updatedItem;
-	}
-};
+const TripPackage = mongoose.model('TripPackage', tripSchema);
 
-function createNewTrip() {
-	const storage = Object.create(searchResults);
-	storage.items = {};
-	return storage;
-}
-
-module.exports = {
-	searchResults: createNewTrip()
-}
-
-
-
-
-
-
-
-
-
-
+module.exports = {TripPackage};
 
 

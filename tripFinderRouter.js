@@ -13,6 +13,7 @@ searchResults.create('9/14/2017', 'Beginner');
 // Get request is really the only CRUD op that is used for the customer(user)
 router.get('/', (req, res) => {
 	res.json(searchResults.get());
+ // if (req.body.date)
 });
 
 // Post, Delete, and Put are currently set to $SearchReslt var, but
