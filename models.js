@@ -7,9 +7,9 @@ const tripSchema = mongoose.Schema({
 	img: {type: String, require: true},
 	description: {type: String, require: true},
 	location: {type: String, require: true},
-	tripDate: {
-		startTrip: {type: String, require: true},
-		endTrip: {type: String, require: true}
+	tripDates: {
+		startTrip: type: String, require: true,
+		endTrip: type: String, require: true
 	},
 	abilityLevel: {type: String, require: true},
 	dateEdited: {type: Date, default: Date.now}
