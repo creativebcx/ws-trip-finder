@@ -8,8 +8,8 @@ const tripSchema = mongoose.Schema({
 	description: {type: String, require: true},
 	location: {type: String, require: true},
 	tripDates: {
-		startTrip: type: String, require: true,
-		endTrip: type: String, require: true
+		startTrip: String,
+		endTrip: String
 	},
 	abilityLevel: {type: String, require: true},
 	dateEdited: {type: Date, default: Date.now}

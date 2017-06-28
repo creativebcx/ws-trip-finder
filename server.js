@@ -8,7 +8,7 @@ const tripFinderRouter = require('./tripFinderRouter');
 //const {router: tripFinderRouter} = require('./tripFinderRouter');
 
 //mongoose & database
-const {DATABASE_URL, PORT} = require('config');
+const {DATABASE_URL, PORT} = require('./config');
 const {tripDb} =require('./models');
 
 const mongoose = require('mongoose');
