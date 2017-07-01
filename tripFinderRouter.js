@@ -32,7 +32,8 @@ router.get('/:id', (req, res) => {
     .then(post => res.json(post.apiRepr()))
     .catch(err => {
       console.error(error);
-      res.status(500).json({error: 'something went wrong!'})
+      res.status(500).json({
+        error: 'An error has occured while trying to complete a GET request by ID.'})
     });
 });
 

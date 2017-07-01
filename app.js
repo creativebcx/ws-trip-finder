@@ -9,11 +9,23 @@ var elFinalReviewBox = $('#final-review-wrapper');
 var elTripBox = $('#trip-wrapper');
 var elSubmitButton = $('#submit');
 var elNextButton = $('#next');
-var elBackButton = $('#back');
+var elStartOver = $('#startOver');
 var state = {
 	currentStep: 0,
 	currentSelectionDate: [],
-	currentSelectionAbility: []
+	currentSelectionAbility: [],
+	testState : {
+		nameOfTrip: "Big Bend & The Rio Grande", 
+		url: "https://westernspirit.com/WSC_BB.php",
+		img: "img/bigbend.jpg",
+		description: "Off the beaten path, Big Bend National Park is an incredible playground in remote Texas. Imagine riding exhilerating trails & roads through the beautiful Chihuahuan Desert. We will be riding in both Big Bend State Park and Big Bend National Park and even paddling for a day on the famous Rio Grande.",
+		location: "Texas",
+		tripDates: {
+			startTrip: "2/19/2018",
+			endTrip: "2/23/2018"
+		},
+		abilityLevel: "Beginner"
+	}
 };
 var wsTripSearch = 'http://localhost:8080/trip-finder';
 
@@ -41,15 +53,23 @@ elNextButton.click( function(event) {
 	state.currentStep++;
 });
 
-elBackButton.click( function(event) {
-	renderCurrentStep();
+elStartOver.click( function(event) {
+	location.reload(true);
+	// old function to take step back
+	/*renderCurrentStep();
 	if (state.currentStep != 0) {
 		state.currentStep--;
-		};
+		};*/
 });
 
 elSubmitButton.click( function(event) {
+	event.preventDefault();
 	renderCurrentStep();
+	elSubmitButton.addClass('hidden');
+	// for testing - should replace with new DISPLAY function
+	testDisplaySearchResults();
+	// for API call - should remove comment out
+	//getDataFromApi(query, displaySearchResults);
 });
 
 function renderCurrentStep(currentStep) {
@@ -99,12 +119,13 @@ function renderFinalReview(currentStep) {
 
 function getDataFromApi(searchTerm, callback) {
 	var query = {
-		abilityLevel: state.currentSelectionAbility,
-		date: state.currentSelectionDate
+		abilityLevel: state.currentSelectionAbility[0],
+		date: state.currentSelectionDate[0]
 	}
 	$.getJSON(wsTripSearch, query, callback);
 }
-
+/*
+// API response syntax
 function displaySearchResults(data) {
 	var resultElement = '';
 	if (data.items) {
@@ -113,11 +134,21 @@ function displaySearchResults(data) {
 		});
 	};
 };
+*/
 
-elSubmitButton.click( function(event) {
-	event.preventDefault();
-	getDataFromApi(query, displaySearchResults);
-})
+// testing response
+function testDisplaySearchResults(data) {
+	$('#trip-wrapper').html(
+		'<div id="nameOfTripStyle">' + state.testState.nameOfTrip + '</div>' +
+		'<div id="imgStyleDiv"><img id="imgStyle" src="'+ state.testState.img +'" alt="BB"></div>' +
+		'<div id="descriptionStyle">' + state.testState.description + '</div>' +
+		'<div id="locationStyle">Location: ' + state.testState.location + '</div>' +
+		'<div id="tripDatesStyle"> Trip dates: ' + state.testState.tripDates.startTrip + ' to ' +
+			state.testState.tripDates.endTrip + '</div>' +
+		'<div id="abilityLevelStyle">Ability level: ' + state.testState.abilityLevel + '</div>' +
+		'<div id="urlStyle"><a href="' + state.testState.url + '" target="_blank"><button>Find Out More!</button></a></div>'
+		);
+};
 
 // currentStep testing function
 $(document).click( function (event) {

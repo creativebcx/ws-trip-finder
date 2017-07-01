@@ -22,16 +22,18 @@ function runServer(databaseUrl=DATABASE_URL, port=PORT) {
   return new Promise((resolve, reject) => {
     mongoose.connect(databaseUrl, err => {
       if (err) {
-        return reject(err);
         console.log('An error has occured while trying to connect with the db.');
+        return reject(err);
       }
     server = app.listen(port, () => {
       console.log(`Your app is listening on port ${port}`);
+      console.log(global.DATABASE_URL, databaseUrl);
     resolve();
   })
   .on('error', err => {
     mongoose.disconnect();
     reject(err);
+    console.log(`Database Error`);
     });
   });
 });
