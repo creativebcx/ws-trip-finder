@@ -15,6 +15,7 @@ var state = {
 	currentSelectionDate: [],
 	currentSelectionAbility: []
 };
+var wsTripSearch = 'http://localhost:8080/trip-finder';
 
 // landing page and start button trigger
 elStartButton.click( function(event) {
@@ -96,7 +97,27 @@ function renderFinalReview(currentStep) {
 	};
 };
 
+function getDataFromApi(searchTerm, callback) {
+	var query = {
+		abilityLevel: state.currentSelectionAbility,
+		date: state.currentSelectionDate
+	}
+	$.getJSON(wsTripSearch, query, callback);
+}
 
+function displaySearchResults(data) {
+	var resultElement = '';
+	if (data.items) {
+		data.items.forEach( function(item) {
+			return resultElement;
+		});
+	};
+};
+
+elSubmitButton.click( function(event) {
+	event.preventDefault();
+	getDataFromApi(query, displaySearchResults);
+})
 
 // currentStep testing function
 $(document).click( function (event) {

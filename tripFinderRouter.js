@@ -1,25 +1,52 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-const {searchResults} = require('./models');
+const {TripPackage} = require('./models');
+//mongoose.Promise = global.Promise;
 
-// Get request is really the only CRUD op that is used for the customer(user)
-router.get('/', (req, res) => {
-	res.json(searchResults.get());
- // if (req.body.date)
+router.get('/', function(req, res) {
+    TripPackage
+      .find()
+      .limit(10)
+      .exec()
+      .then(Trips => {
+        console.log(Trips)
+        res.json({
+          trips: Trips
+        });
+      })
+      .catch(err => {
+      console.error(err);
+      res.status(500).json({error: 'An error has occured within the GET request'});
+    });
 });
 
-// Post, Delete, and Put are currently set to $SearchReslt var, but
-// they will actually be set to something different because the admin
-// or "western spirit employee" user will be the only user that interacts
-// with this part of the CRUD operation.
+router.get('/:id', (req, res) => {
+  TripPackage
+    .findById(req.params.id)
+    .exec()
+    .then(post => res.json(post.apiRepr()))
+    .catch(err => {
+      console.error(error);
+      res.status(500).json({error: 'something went wrong!'})
+    });
+});
 
-router.post('/', jsonParser, (req, res) => {
-  // ensure `date` and `ability` are in request body
-  const requiredFields = ['date', 'ability'];
+router.post('/', (req, res) => {
+  const requiredFields = [
+    'nameOfTrip',
+    'url',
+    'img',
+    'description',
+    'location',
+    'tripDates.startTrip',
+    'tripDates.endTrip',
+    'abilityLevel'
+    ];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -28,14 +55,22 @@ router.post('/', jsonParser, (req, res) => {
       return res.status(400).send(message);
     }
   }
-  const item = searchResults.create(req.body.date, req.body.ability);
-  res.status(201).json(item);
-});
 
-router.delete('/:id', (req, res) => {
-  searchResults.delete(req.params.id);
-  console.log(`Deleted search result item \`${req.params.ID}\``);
-  res.status(204).end();
+  BlogPost
+    .create({
+      nameOfTrip: this.nameOfTrip,
+      url: this.url,
+      description: this.description,
+      location: this.location,
+      tripDate: this.tripDate,
+      abilityLevel: this.abilityLevel
+    })
+    .then(tripFinder => res.status(201).json(tripFinder.apiRepr()))
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({error: 'Something went wrong while trying to POST an entry'});
+    });
+
 });
 
 router.put('/:id', jsonParser, (req, res) => {

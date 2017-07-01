@@ -12,11 +12,11 @@ const tripSchema = mongoose.Schema({
 		endTrip: String
 	},
 	abilityLevel: {type: String, require: true},
-	dateEdited: {type: Date, default: Date.now}
+	//dateEdited: {type: String, require: true}
 });
 
 tripSchema.virtual('tripDate').get(function() {
-	return `${this.tripDate.start} ${this.tripDate.end}`.trim();
+	return `${this.tripDate.startTrip}` + ` to ` + `${this.tripDate.endTrip}`.trim();
 });
 
 tripSchema.methods.apiRepr = function() {
@@ -34,5 +34,4 @@ tripSchema.methods.apiRepr = function() {
 const TripPackage = mongoose.model('TripPackage', tripSchema);
 
 module.exports = {TripPackage};
-
 

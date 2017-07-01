@@ -9,7 +9,6 @@ const tripFinderRouter = require('./tripFinderRouter');
 
 //mongoose & database
 const {DATABASE_URL, PORT} = require('./config');
-const {tripDb} =require('./models');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -24,10 +23,10 @@ function runServer(databaseUrl=DATABASE_URL, port=PORT) {
     mongoose.connect(databaseUrl, err => {
       if (err) {
         return reject(err);
+        console.log('An error has occured while trying to connect with the db.');
       }
-    
     server = app.listen(port, () => {
-      console.log('Your app is listening on port ${port}');
+      console.log(`Your app is listening on port ${port}`);
     resolve();
   })
   .on('error', err => {
