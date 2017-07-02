@@ -14,6 +14,14 @@ router.use(function(req,res,next) {
   next();
 });
 
+app.use(cors({
+    'allowedHeaders': ['abilityLevel', 'date'],
+    'exposedHeaders': ['sessionId'],
+    'origin': '*',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false
+   }));
+
 router.get('/', function(req, res, next) {
     TripPackage
       .find()

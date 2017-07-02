@@ -116,11 +116,23 @@ function renderFinalReview(currentStep) {
 };
 
 function getDataFromApi(searchTerm, callback) {
+	/*$.getJSON( "https://secure-bastion-80953.herokuapp.com/trip-finder", function( data ) {
+  		var items = [];
+  		$.each( data, function( key, val ) {
+    		items.push( "<li id='" + key + "'>" + val + "</li>" );
+  		});
+ 
+  		$( "<ul/>", {
+    		"class": "my-new-list",
+    		html: items.join( "" )
+  		}).appendTo( "body" );
+	});
+*/
 	$.ajax({
     	url: 'https://secure-bastion-80953.herokuapp.com/trip-finder',
    		headers: {
        	},
-    	type: "GET", /* or type:"GET" or type:"PUT" */
+    	type: "GET",
     	dataType: "json",
     	data: {
     	},
