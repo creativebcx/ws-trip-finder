@@ -7,13 +7,13 @@ const jsonParser = bodyParser.json();
 
 const {TripPackage} = require('./models');
 //mongoose.Promise = global.Promise;
-
+/*
 router.use(function(req,res,next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
+*/
 router.get('/', function(req, res, next) {
     TripPackage
       .find()
@@ -108,7 +108,7 @@ router.put('/:id', jsonParser, (req, res) => {
 
 module.exports = router;
 
-/*
+
 // 86,400,000 = 1 Day
 // 1,209,600,000 = 14 Days
 function isDateClose(date, setDate) {

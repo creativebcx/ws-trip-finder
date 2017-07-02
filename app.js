@@ -14,7 +14,7 @@ var state = {
 	currentStep: 0,
 	currentSelectionDate: [],
 	currentSelectionAbility: [],
-	testState : {
+/*	testState : {
 		nameOfTrip: "Big Bend & The Rio Grande", 
 		url: "https://westernspirit.com/WSC_BB.php",
 		img: "img/bigbend.jpg",
@@ -25,7 +25,7 @@ var state = {
 			endTrip: "2/23/2018"
 		},
 		abilityLevel: "Beginner"
-	}
+	} */
 };
 
 // landing page and start button trigger
@@ -54,11 +54,6 @@ elNextButton.click( function(event) {
 
 elStartOver.click( function(event) {
 	location.reload(true);
-	// old function to take step back
-	/*renderCurrentStep();
-	if (state.currentStep != 0) {
-		state.currentStep--;
-		};*/
 });
 
 elSubmitButton.click( function(event) {
@@ -115,50 +110,27 @@ function renderFinalReview(currentStep) {
 	};
 };
 
-function getDataFromApi(searchTerm, callback) {
-	/*$.getJSON( "https://secure-bastion-80953.herokuapp.com/trip-finder", function( data ) {
-  		var items = [];
-  		$.each( data, function( key, val ) {
-    		items.push( "<li id='" + key + "'>" + val + "</li>" );
-  		});
- 
-  		$( "<ul/>", {
-    		"class": "my-new-list",
-    		html: items.join( "" )
-  		}).appendTo( "body" );
-	});
-*/
-	$.ajax({
-    	url: 'https://secure-bastion-80953.herokuapp.com/trip-finder',
-   		headers: {
-   			abilityLevel: state.currentSelectionAbility[0],
-   			date: state.currentSelectionDate[0]
-       	},
-    	type: "GET",
-    	dataType: "json",
-    	data: {
-    	},
-    	success: function (result) {
-        	testDisplaySearchResults()   
-    	},
-    	error: function () {
-        	console.log("error");
-    	}
-	});
+function getDataFromApi() {
+	var wsTripFinderAPI = "https://secure-bastion-80953.herokuapp.com/trip-finder";
+	$.getJSON( wsTripFinderAPI, {
+		format: 'json',
+	})
+		.done( function( data ) {
+			console.log("successful ajax call", data)
+			$('#trip-wrapper').html(
+				'<div id="nameOfTripStyle">' + data.trips[1].nameOfTrip + '</div>' +
+				'<div id="imgStyleDiv"><img id="imgStyle" src="'+ data.trips[1].img +'" alt="BB"></div>' +
+				'<div id="descriptionStyle">' + data.trips[1].description + '</div>' +
+				'<div id="locationStyle">Location: ' + data.trips[1].location + '</div>' +
+				'<div id="tripDatesStyle"> Trip dates: ' + data.trips[1].tripDates.startTrip + ' to ' +
+					data.trips[1].tripDates.endTrip + '</div>' +
+				'<div id="abilityLevelStyle">Ability level: ' + data.trips[1].abilityLevel + '</div>' +
+				'<div id="urlStyle"><a href="' + data.trips[1].url + '" target="_blank"><button>Find Out More!</button></a></div>'
+			);
+		});
 };
 
 /*
-// API response syntax
-function displaySearchResults(data) {
-	var resultElement = '';
-	if (data.items) {
-		data.items.forEach( function(item) {
-			return resultElement;
-		});
-	};
-};
-*/
-
 // testing response
 function testDisplaySearchResults(data) {
 	$('#trip-wrapper').html(
@@ -172,6 +144,7 @@ function testDisplaySearchResults(data) {
 		'<div id="urlStyle"><a href="' + state.testState.url + '" target="_blank"><button>Find Out More!</button></a></div>'
 		);
 };
+*/
 
 // currentStep testing function
 $(document).click( function (event) {
