@@ -8,16 +8,18 @@ const tripSchema = mongoose.Schema({
 	description: {type: String, require: true},
 	location: {type: String, require: true},
 	tripDates: {
-		startTrip: String,
-		endTrip: String
+		startTrip: [String],
+		endTrip: [String]
 	},
 	abilityLevel: {type: String, require: true},
-	//dateEdited: {type: String, require: true}
 });
 
+// might not work with an array
+/*
 tripSchema.virtual('tripDate').get(function() {
 	return `${this.tripDate.startTrip}` + ` to ` + `${this.tripDate.endTrip}`.trim();
 });
+*/
 
 tripSchema.methods.apiRepr = function() {
 	return {

@@ -27,7 +27,7 @@ var state = {
 		abilityLevel: "Beginner"
 	}
 };
-var wsTripSearch = 'http://localhost:8080/trip-finder';
+var wsTripSearch = 'http://wstripfinder.herokuapp.com/trip-finder';
 
 // landing page and start button trigger
 elStartButton.click( function(event) {
@@ -67,9 +67,8 @@ elSubmitButton.click( function(event) {
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');
 	// for testing - should replace with new DISPLAY function
-	testDisplaySearchResults();
-	// for API call - should remove comment out
-	//getDataFromApi(query, displaySearchResults);
+	//testDisplaySearchResults();
+	getDataFromApi(query, displaySearchResults);
 });
 
 function renderCurrentStep(currentStep) {
