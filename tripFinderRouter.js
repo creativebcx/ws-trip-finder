@@ -8,7 +8,7 @@ const jsonParser = bodyParser.json();
 const {TripPackage} = require('./models');
 //mongoose.Promise = global.Promise;
 
-router.get('/', function(req, res) {
+router.get('/', function(req, res, next) {
     TripPackage
       .find()
       .limit(10)
