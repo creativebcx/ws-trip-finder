@@ -27,7 +27,6 @@ var state = {
 		abilityLevel: "Beginner"
 	}
 };
-var wsTripSearch = 'http://wstripfinder.herokuapp.com/trip-finder';
 
 // landing page and start button trigger
 elStartButton.click( function(event) {
@@ -68,7 +67,7 @@ elSubmitButton.click( function(event) {
 	elSubmitButton.addClass('hidden');
 	// for testing - should replace with new DISPLAY function
 	//testDisplaySearchResults();
-	getDataFromApi(query, displaySearchResults);
+	getDataFromApi();
 });
 
 function renderCurrentStep(currentStep) {
@@ -117,22 +116,33 @@ function renderFinalReview(currentStep) {
 };
 
 function getDataFromApi(searchTerm, callback) {
-	var query = {
-		abilityLevel: state.currentSelectionAbility[0],
-		date: state.currentSelectionDate[0]
-	}
-	$.getJSON(wsTripSearch, query, callback);
-}
+	$.ajax({
+    	url: 'http://wstripfinder.herokuapp.com/trip-finder',
+   		headers: {
+        //'Content-Type': 'application/x-www-form-urlencoded'
+       	},
+    	type: "GET", /* or type:"GET" or type:"PUT" */
+    	dataType: "json",
+    	data: {
+    	},
+    	success: function (result) {
+        	testDisplaySearchResults()    
+    	},
+    	error: function () {
+        	console.log("error");
+    	}
+	});
+};
+
 /*
 // API response syntax
-function displaySearchResults(data) {
+//function displaySearchResults(data) {
 	var resultElement = '';
 	if (data.items) {
 		data.items.forEach( function(item) {
 			return resultElement;
 		});
 	};
-};
 */
 
 // testing response
