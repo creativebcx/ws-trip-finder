@@ -14,6 +14,12 @@ mongoose.Promise = global.Promise;
 
 app.use('/trip-finder', tripFinderRouter);
 
+app.use(function(req,res,next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 let server;
 
 // run server function
