@@ -8,13 +8,7 @@ const jsonParser = bodyParser.json();
 const {TripPackage} = require('./models');
 //mongoose.Promise = global.Promise;
 
-router.use(function(req,res,next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     TripPackage
       .find()
       .limit(10)

@@ -117,16 +117,17 @@ function renderFinalReview(currentStep) {
 
 function getDataFromApi(searchTerm, callback) {
 	$.ajax({
-    	url: 'http://wstripfinder.herokuapp.com/trip-finder',
+    	url: 'https://secure-bastion-80953.herokuapp.com/trip-finder',
    		headers: {
-        //'Content-Type': 'application/x-www-form-urlencoded'
+        	"abilityLevel": state.currentSelectionAbility[0],
+        	"tripDates": state.currentSelectionDate[0]
        	},
     	type: "GET", /* or type:"GET" or type:"PUT" */
     	dataType: "json",
     	data: {
     	},
     	success: function (result) {
-        	testDisplaySearchResults()    
+        	testDisplaySearchResults()   
     	},
     	error: function () {
         	console.log("error");
@@ -136,13 +137,14 @@ function getDataFromApi(searchTerm, callback) {
 
 /*
 // API response syntax
-//function displaySearchResults(data) {
+function displaySearchResults(data) {
 	var resultElement = '';
 	if (data.items) {
 		data.items.forEach( function(item) {
 			return resultElement;
 		});
 	};
+};
 */
 
 // testing response
