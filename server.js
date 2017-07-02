@@ -6,11 +6,9 @@ app.use(express.static('public'));
 app.use(morgan('common'));
 
 const tripFinderRouter = require('./tripFinderRouter');
-//const {router: tripFinderRouter} = require('./tripFinderRouter');
 
 //mongoose & database
 const {DATABASE_URL, PORT} = require('./config');
-
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
@@ -22,7 +20,6 @@ app.use(function(req,res,next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
 
 let server;
 
