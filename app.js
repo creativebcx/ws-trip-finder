@@ -120,7 +120,7 @@ function getDataFromApi(searchTerm, callback) {
     	url: 'https://secure-bastion-80953.herokuapp.com/trip-finder',
    		headers: {
         	"abilityLevel": state.currentSelectionAbility[0],
-        	"tripDates": state.currentSelectionDate[0]
+        	"dateSelected": state.currentSelectionDate[0]
        	},
     	type: "GET", /* or type:"GET" or type:"PUT" */
     	dataType: "json",
