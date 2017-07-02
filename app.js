@@ -131,6 +131,8 @@ function getDataFromApi(searchTerm, callback) {
 	$.ajax({
     	url: 'https://secure-bastion-80953.herokuapp.com/trip-finder',
    		headers: {
+   			abilityLevel: state.currentSelectionAbility[0],
+   			date: state.currentSelectionDate[0]
        	},
     	type: "GET",
     	dataType: "json",
