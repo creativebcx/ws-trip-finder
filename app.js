@@ -10,8 +10,8 @@ var elTripBox = $('#trip-wrapper');
 var elSubmitButton = $('#submit');
 var elNextButton = $('#next');
 var elStartOver = $('#startOver');
-var elTripForward = $('#trip-wrapper, #tripControls, #tripForward');
-var elTripBack = $('#trip-wrapper, #tripControls, #tripBack')
+var elTripForward = $('#tripForward');
+var elTripBack = $('#tripBack')
 var incMove = 0;
 var state = {
 	currentStep: 0,
@@ -63,6 +63,7 @@ elSubmitButton.click( function(event) {
 	event.preventDefault();
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');
+	elTripForward.removeClass('hidden');
 	// for testing - should replace with new DISPLAY function
 	//testDisplaySearchResults();
 	getDataFromApi();
@@ -125,8 +126,7 @@ function getDataFromApi() {
 				'<div id="tripDatesStyle"> Trip dates: ' + data.trips[incMove].tripDates.startTrip + ' to ' +
 					data.trips[incMove].tripDates.endTrip + '</div>' +
 				'<div id="abilityLevelStyle">Ability level: ' + data.trips[incMove].abilityLevel + '</div>' +
-				'<div id="urlStyle"><a href="' + data.trips[incMove].url + '" target="_blank"><button>Find Out More!</button></a></div>' +
-				'<div id="tripControls"><button id="tripBack"><</button><button id="tripForward">></button>'
+				'<div id="urlStyle"><a href="' + data.trips[incMove].url + '" target="_blank"><button>Find Out More!</button></a></div>'
 			);
 		});
 };
@@ -143,6 +143,7 @@ function sortResults(data) {
 
 elTripForward.click( function(event) {
 	incMove++;
+	elTripBack.removeClass('hidden');
 	getDataFromApi();
 });
 

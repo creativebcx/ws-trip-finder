@@ -59,6 +59,28 @@ button {
 	margin-top: 3%;
 }
 
+#trip-back-wrapper {
+	float: left;
+	text-align: left;
+	margin-top: 10%;
+	width: 5%;
+}
+
+#tripBack {
+	width: 100%;
+}
+
+#trip-forward-wrapper {
+	float: right;
+	text-align: right;
+	margin-top: 10%;
+	width: 5%;
+}
+
+#tripForward {
+	width: 100%;
+}
+
 /* Trip Wrapper Styling*/
 #trip-wrapper {
 	border: none;
