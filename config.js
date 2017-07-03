@@ -7,3 +7,11 @@ exports.PORT = process.env.PORT || 8080;
 
 // secure-bastion-80953
 // https://secure-bastion-80953.herokuapp.com/ | https://git.heroku.com/secure-bastion-80953.git
+
+
+// don't do login yourself - login with another service - twitch login - google login - fb login - gitHub login
+// forgot other password not of their own
+// basic password reset (levels of security)
+// proper hasing of passwords
+// where are your password tokens generated
+// security not just obscurity

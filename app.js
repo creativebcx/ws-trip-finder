@@ -11,7 +11,7 @@ var elSubmitButton = $('#submit');
 var elNextButton = $('#next');
 var elStartOver = $('#startOver');
 var elTripForward = $('#trip-wrapper, #tripControls, #tripForward');
-var elTripBack = $('#tripControls, #tripBack')
+var elTripBack = $('#trip-wrapper, #tripControls, #tripBack')
 var incMove = 0;
 var state = {
 	currentStep: 0,
@@ -130,6 +130,16 @@ function getDataFromApi() {
 			);
 		});
 };
+
+function sortResults(data) {
+	var abilityBoolean = false;
+	if (data.trips[i].abilityLevel == state.currentSelectionAbility[0]) {
+		abilityBoolean = true;
+	}
+	else {
+		abilityBoolean = false;
+	}
+}
 
 elTripForward.click( function(event) {
 	incMove++;
