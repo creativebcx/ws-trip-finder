@@ -107,14 +107,3 @@ router.put('/:id', jsonParser, (req, res) => {
 })
 
 module.exports = router;
-
-
-// 86,400,000 = 1 Day
-// 1,209,600,000 = 14 Days
-function isDateClose(date, setDate) {
-  if (Date.parse(date) <= (setDate + 1209600000) - setDate &&  {
-    return true;
-  if (Date.parse(date) >= )
-
-}
-*/

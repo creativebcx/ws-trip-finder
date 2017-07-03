@@ -14,7 +14,7 @@ var state = {
 	currentStep: 0,
 	currentSelectionDate: [],
 	currentSelectionAbility: [],
-/*	testState : {
+	testState : {
 		nameOfTrip: "Big Bend & The Rio Grande", 
 		url: "https://westernspirit.com/WSC_BB.php",
 		img: "img/bigbend.jpg",
@@ -25,7 +25,7 @@ var state = {
 			endTrip: "2/23/2018"
 		},
 		abilityLevel: "Beginner"
-	} */
+	}
 };
 
 // landing page and start button trigger
