@@ -10,6 +10,9 @@ var elTripBox = $('#trip-wrapper');
 var elSubmitButton = $('#submit');
 var elNextButton = $('#next');
 var elStartOver = $('#startOver');
+var elTripForward = $('#tripControls, #tripForward');
+var elTripBack = $('#tripControls, #tripBack')
+var incMove = 0;
 var state = {
 	currentStep: 0,
 	currentSelectionDate: [],
@@ -66,7 +69,6 @@ elSubmitButton.click( function(event) {
 });
 
 function renderCurrentStep(currentStep) {
-	console.log(state.currentStep);
 	if (state.currentStep == 1) {
 		elSkillLevelBox.removeClass('hidden');
 		elCalendarBox.addClass('hidden');
@@ -90,14 +92,12 @@ function currentSelectionDate() {
 	state.currentSelectionDate.push( {
 		date: $('#datepicker').val()
 	});
-	console.log(state.currentSelectionDate[0].date);
 };
 
 function currentSelectionAbility() {
 	state.currentSelectionAbility.push( {
 		abilityLevel: $('#ability-level').val()
 	});
-	console.log(state.currentSelectionAbility[0].abilityLevel);
 };
 // render final review before submit function
 
@@ -118,17 +118,28 @@ function getDataFromApi() {
 		.done( function( data ) {
 			console.log("successful ajax call", data)
 			$('#trip-wrapper').html(
-				'<div id="nameOfTripStyle">' + data.trips[1].nameOfTrip + '</div>' +
-				'<div id="imgStyleDiv"><img id="imgStyle" src="'+ data.trips[1].img +'" alt="BB"></div>' +
-				'<div id="descriptionStyle">' + data.trips[1].description + '</div>' +
-				'<div id="locationStyle">Location: ' + data.trips[1].location + '</div>' +
-				'<div id="tripDatesStyle"> Trip dates: ' + data.trips[1].tripDates.startTrip + ' to ' +
-					data.trips[1].tripDates.endTrip + '</div>' +
-				'<div id="abilityLevelStyle">Ability level: ' + data.trips[1].abilityLevel + '</div>' +
-				'<div id="urlStyle"><a href="' + data.trips[1].url + '" target="_blank"><button>Find Out More!</button></a></div>'
+				'<div id="nameOfTripStyle">' + data.trips[incMove].nameOfTrip + '</div>' +
+				'<div id="imgStyleDiv"><img id="imgStyle" src="'+ data.trips[incMove].img +'" alt="BB"></div>' +
+				'<div id="descriptionStyle">' + data.trips[incMove].description + '</div>' +
+				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
+				'<div id="tripDatesStyle"> Trip dates: ' + data.trips[incMove].tripDates.startTrip + ' to ' +
+					data.trips[incMove].tripDates.endTrip + '</div>' +
+				'<div id="abilityLevelStyle">Ability level: ' + data.trips[incMove].abilityLevel + '</div>' +
+				'<div id="urlStyle"><a href="' + data.trips[incMove].url + '" target="_blank"><button>Find Out More!</button></a></div>' +
+				'<div id="tripControls"><button id="tripBack"><</button><button id="tripForward">></button>'
 			);
 		});
 };
+
+elTripForward.click( function(event) {
+	incMove++;
+	getDataFromApi();
+});
+
+elTripBack.click( function(event) {
+	incMove--;
+	getDataFromApi();
+});
 
 /*
 // testing response
