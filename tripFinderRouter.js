@@ -21,8 +21,10 @@ router.get('/', function(req, res, next) {
       .exec()
       .then(Trips => {
         let abilityLevel = req.query.abilityLevel.abilityLevel;
+        let date = req.query.date.date;
         let response = Trips.filter( function (trip) {
-          console.log(abilityLevel.abilityLevel, trip.abilityLevel);
+          //console.log(abilityLevel.abilityLevel, trip.abilityLevel);
+          console.log(date, trip.tripDates.startTrip);
             //return abilityLevel == trip.abilityLevel;
           switch (abilityLevel) {
             case 'Introductory':
