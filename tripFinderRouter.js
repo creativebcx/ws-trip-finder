@@ -17,7 +17,7 @@ router.use(function(req,res,next) {
 router.get('/', function(req, res, next) {
     TripPackage
       .find()
-      .limit(55)
+      .limit(20)
       .exec()
       .then(Trips => {
         console.log("GET Request has been made!")

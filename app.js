@@ -83,13 +83,13 @@ function currentSelectionDate() {
 		date: $('#datepicker').val()
 	});
 };
-
+var newAbilityLevel;
 function currentSelectionAbility() {
 	state.currentSelectionAbility.push( {
 		abilityLevel: $('#ability-level').val()
 	});
 };
-
+	
 // render final review before submit function so the user can see their selections
 function renderFinalReview(currentStep) {
 	if (state.currentStep == 2) {
@@ -105,6 +105,8 @@ function getDataFromApi() {
 	var wsTripFinderAPI = "https://secure-bastion-80953.herokuapp.com/trip-finder";
 	$.getJSON( wsTripFinderAPI, {
 		format: 'json',
+		date: state.currentSelectionDate[0],
+		abilityLevel: state.currentSelectionAbility[0]
 		})
 		.done( function( data ) {
 
