@@ -116,10 +116,10 @@ function getDataFromApi() {
 
 			// creating a new date list based off of items in the array
 			function createDateList (data) {	
-				$('#tripDatesWrapper').append("<div>Trip dates: </div>");
+				$('#tripDatesStyle').append("<ul>Trip dates: </ul>");
 						for(var i in newTripListS) {
-    					var li = "<p>";
-    					$("div").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
+    					var li = "<li>";
+    					$("ul").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
 					}				
 			};
 			
@@ -129,7 +129,7 @@ function getDataFromApi() {
 				'<div id="imgStyleDiv"><img id="imgStyle" src="'+ data.trips[incMove].img +'" alt="BB"></div>' +
 				'<div id="descriptionStyle">' + data.trips[incMove].description + '</div>' +
 				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
-				'<div id="tripDatesWrapper"></div>' +
+				'<div id="tripDatesStyle"></div>' +
 				'<div id="abilityLevelStyle">Ability level: ' + data.trips[incMove].abilityLevel + '</div>' +
 				'<div id="urlStyle"><a href="' + data.trips[incMove].url + 
 				'" target="_blank"><button>Find Out More!</button></a></div>'
