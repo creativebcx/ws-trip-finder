@@ -17,18 +17,6 @@ var state = {
 	currentStep: 0,
 	currentSelectionDate: [],
 	currentSelectionAbility: [],
-	testState : {
-		nameOfTrip: "Big Bend & The Rio Grande", 
-		url: "https://westernspirit.com/WSC_BB.php",
-		img: "img/bigbend.jpg",
-		description: "Off the beaten path, Big Bend National Park is an incredible playground in remote Texas. Imagine riding exhilerating trails & roads through the beautiful Chihuahuan Desert. We will be riding in both Big Bend State Park and Big Bend National Park and even paddling for a day on the famous Rio Grande.",
-		location: "Texas",
-		tripDates: {
-			startTrip: "2/19/2018",
-			endTrip: "2/23/2018"
-		},
-		abilityLevel: "Beginner"
-	}
 };
 
 // landing page and start button trigger
@@ -48,7 +36,7 @@ function startTripFinder() {
 	elCalendarBox.removeClass('hidden');
 };
 
-// moving forward or backwards with the currentStep function
+// control panel buttons to select date, ability, and to submit the GET
 elNextButton.click( function(event) {
 	renderCurrentStep();
 	renderFinalReview();
@@ -69,6 +57,7 @@ elSubmitButton.click( function(event) {
 	getDataFromApi();
 });
 
+// UI rendering logic
 function renderCurrentStep(currentStep) {
 	if (state.currentStep == 1) {
 		elSkillLevelBox.removeClass('hidden');
@@ -100,8 +89,8 @@ function currentSelectionAbility() {
 		abilityLevel: $('#ability-level').val()
 	});
 };
-// render final review before submit function
 
+// render final review before submit function so the user can see their selections
 function renderFinalReview(currentStep) {
 	if (state.currentStep == 2) {
 	elFinalReviewBox.html("<h2>You selected:<br><br></h2>\
@@ -111,26 +100,43 @@ function renderFinalReview(currentStep) {
 	};
 };
 
+// ajax GET request
 function getDataFromApi() {
 	var wsTripFinderAPI = "https://secure-bastion-80953.herokuapp.com/trip-finder";
 	$.getJSON( wsTripFinderAPI, {
 		format: 'json',
-	})
+		})
 		.done( function( data ) {
-			console.log("successful ajax call", data)
+
+			// creating variables to format the dates from the start date and end date arrays
+				var newTripListS = data.trips[incMove].tripDates.startTrip;
+				var newTripListE = data.trips[incMove].tripDates.endTrip;
+
+			// creating a new date list based off of items in the array
+			function createDateList (data) {	
+				$('#tripDatesStyle').append("<ul>Trip dates: </ul>");
+						for(var i in newTripListS) {
+    					var li = "<li>";
+    					$("ul").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
+					}				
+			};
+			
+			// returning the json object from the GET request to the user
 			$('#trip-wrapper').html(
 				'<div id="nameOfTripStyle">' + data.trips[incMove].nameOfTrip + '</div>' +
 				'<div id="imgStyleDiv"><img id="imgStyle" src="'+ data.trips[incMove].img +'" alt="BB"></div>' +
 				'<div id="descriptionStyle">' + data.trips[incMove].description + '</div>' +
 				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
-				'<div id="tripDatesStyle"> Trip dates: ' + data.trips[incMove].tripDates.startTrip + ' to ' +
-					data.trips[incMove].tripDates.endTrip + '</div>' +
+				'<div id="tripDatesStyle"></div>' +
 				'<div id="abilityLevelStyle">Ability level: ' + data.trips[incMove].abilityLevel + '</div>' +
-				'<div id="urlStyle"><a href="' + data.trips[incMove].url + '" target="_blank"><button>Find Out More!</button></a></div>'
+				'<div id="urlStyle"><a href="' + data.trips[incMove].url + 
+				'" target="_blank"><button>Find Out More!</button></a></div>'
 			);
+			createDateList();
 		});
 };
 
+// start of front-end result sorting - could be moved to back end
 function sortResults(data) {
 	var abilityBoolean = false;
 	if (data.trips[i].abilityLevel == state.currentSelectionAbility[0]) {
@@ -140,7 +146,7 @@ function sortResults(data) {
 		abilityBoolean = false;
 	}
 }
-
+// toggle buttons to search through trips that have been returned from the GET request
 elTripForward.click( function(event) {
 	incMove++;
 	elTripBack.removeClass('hidden');
@@ -150,27 +156,6 @@ elTripForward.click( function(event) {
 elTripBack.click( function(event) {
 	incMove--;
 	getDataFromApi();
-});
-
-/*
-// testing response
-function testDisplaySearchResults(data) {
-	$('#trip-wrapper').html(
-		'<div id="nameOfTripStyle">' + state.testState.nameOfTrip + '</div>' +
-		'<div id="imgStyleDiv"><img id="imgStyle" src="'+ state.testState.img +'" alt="BB"></div>' +
-		'<div id="descriptionStyle">' + state.testState.description + '</div>' +
-		'<div id="locationStyle">Location: ' + state.testState.location + '</div>' +
-		'<div id="tripDatesStyle"> Trip dates: ' + state.testState.tripDates.startTrip + ' to ' +
-			state.testState.tripDates.endTrip + '</div>' +
-		'<div id="abilityLevelStyle">Ability level: ' + state.testState.abilityLevel + '</div>' +
-		'<div id="urlStyle"><a href="' + state.testState.url + '" target="_blank"><button>Find Out More!</button></a></div>'
-		);
-};
-*/
-
-// currentStep testing function
-$(document).click( function (event) {
-	console.log('currentStep ' + state.currentStep);
 });
 
 /*
