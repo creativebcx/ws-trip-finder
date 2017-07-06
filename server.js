@@ -5,6 +5,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(morgan('common'));
 
+
 const tripFinderRouter = require('./tripFinderRouter');
 
 //mongoose & database

@@ -74,19 +74,18 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', jsonParser, (req, res) => {
   const requiredFields = [
     'nameOfTrip',
     'url',
     'img',
     'description',
     'location',
-    'tripDates.startTrip',
-    'tripDates.endTrip',
     'abilityLevel'
     ];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
+    console.log(req.body);
     if (!(field in req.body)) {
       const message = `Missing \`${field}\` in request body`
       console.error(message);
@@ -94,14 +93,14 @@ router.post('/', (req, res) => {
     }
   }
 
-  BlogPost
+  TripPackage
     .create({
-      nameOfTrip: this.nameOfTrip,
-      url: this.url,
-      description: this.description,
-      location: this.location,
-      tripDate: this.tripDate,
-      abilityLevel: this.abilityLevel
+      nameOfTrip: req.body.nameOfTrip,
+      url: req.body.url,
+      img: req.body.img,
+      description: req.body.description,
+      location: req.body.location,
+      abilityLevel: req.body.abilityLevel
     })
     .then(tripFinder => res.status(201).json(tripFinder.apiRepr()))
     .catch(err => {

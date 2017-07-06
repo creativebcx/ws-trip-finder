@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WS Trip Finder Wireframe</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+	<div id="page-wrapper">
+		<header id="title">Western Spirit Trip Finder</header>
+		<div id="inner-box-wrapper">
+			<div id="landing-box">Plan your next bike trip!<br>
+					<button id="start" id="start-button">Find Your Trip!</button>
+			</div>
+			<div id="trip-back-wrapper"><button id="tripBack" class="hidden"><</button></div>
+			<div id="trip-forward-wrapper"><button id="tripForward" class="hidden">></button></div>
+			<div id="calendar-wrapper" class="hidden">What day would you like to start your trip?
+				<p>
+					<input type="text" id="datepicker" placeholder="Select Date">
+				</p>
+			</div>
+			<div id="skill-level-wrapper" class="hidden">What type of mountain bike trip are you looking for?
+				<form>
+  					<select id="ability-level" placeholder="Beginner">
+   							<option value="Introductory" >Introductory</option>
+   							<option value="Introductory-Intermediate" >Introductory-Intermediate</option>
+    						<option value="Intermediate" selected>Intermediate</option>
+    						<option value="Intermediate-Advanced" >Intermediate-Advanced</option>
+    						<option value="Advanced" >Advanced</option>
+    				</select>
+				</form>
+			</div>
+			<div id="final-review-wrapper" class="hidden"></div>
+			<div id="trip-wrapper" class="hidden"></div>
+			<div id="controls-wrapper" class="hidden">
+				<button id="startOver">Start Over</button>
+				<button id="next">Next ></button>
+				<button id="submit" class="hidden">Submit</button>
+			</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="app.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	
+</body>
+</html>
