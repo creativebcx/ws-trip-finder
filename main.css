@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Montserrat', sans-serif;
-	
+
 }
 
 header {
@@ -17,6 +17,7 @@ button {
  	height: 45px;
  	margin: 5%;
  	border: none;
+ 	border-radius: 25px;
 }
 
 ul {
