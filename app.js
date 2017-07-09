@@ -1,4 +1,5 @@
 var elInnerBox = $('#inner-box-wrapper');
+var elbackgroundImg = $('background-image');
 var elStartButton = $('#landing-box, #start-button');
 var elDatePicker = $('#datepicker');
 var elLandingBox = $('#landing-box');
@@ -50,8 +51,8 @@ elStartOver.click( function(event) {
 
 elSubmitButton.click( function(event) {
 	event.preventDefault();
-	elInnerBox.css('background-image', 'none');
-	elInnerBox.css('background-color', 'rgb(249, 129, 62');
+	//elInnerBox.css('background-image', 'none');
+	//elbackgroundImg.css('background-image', '0.5');
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');
 	elTripForward.removeClass('hidden');

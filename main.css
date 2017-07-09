@@ -22,12 +22,18 @@ button {
 }
 
 button:hover {
-	background-color: rgb(250, 204, 179);
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
 }
 
 ul {
 	padding: 0;
 	list-style-type: none;
+}
+
+img {
+	padding-left: 5%;
+	margin-top: 0;
 }
 
 .hidden {
@@ -44,6 +50,7 @@ ul {
 	width: 75%;
 	height: 400px;
 	background-image: url(img/sunset1.jpg);
+
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
@@ -54,6 +61,7 @@ ul {
 	margin-top: 5%;
 	padding: 5%;
 	color: black;
+	font-size: 20px;
 }
 
 #start {
@@ -66,8 +74,29 @@ ul {
 }
 
 #controls-wrapper {
-	margin-top: 20%;
-	margin-bottom: 1%;
+	text-align: center;
+}
+
+#next {
+	text-align: center;
+	background-color: rgb(63, 3, 40);
+	color: white;
+}
+
+#next:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
+}
+
+#startOver {
+	text-align: center;
+	background-color: rgb(63, 3, 40);
+	color: white;
+}
+
+#startOver:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
 }
 
 #calendar-wrapper {
@@ -77,6 +106,7 @@ ul {
 
 #calendar-wrapper, input {
 	margin-top: 3%;
+	font-size: 20px;
 }
 
 #skill-level-wrapper {
@@ -89,10 +119,10 @@ ul {
 	margin-top: 3%;
 }
 
-#ability-level {
+#ability-level, #skill-level-wrapper {
 	border: none;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 14px;
+	font-size: 20px;
 
 }
 
@@ -100,30 +130,67 @@ ul {
     background-color: rgb(250, 204, 179);
 }
 
+#submit {
+	text-align: center;
+	background-color: rgb(63, 3, 40);
+	color: white;
+}
+
+#submit:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
+}
+
 #final-review-wrapper {
-	margin-top: 0px;
+	padding-top: 3%;
+}
+/* Trip found styling */
+
+#nameOfTripStyle {
+	text-align: right;
+	padding-right: 5%;
+	font-size: 30px;
+	padding-top: 5%;
+}
+
+#imgStyleDiv {
+	float: left;
+	width: auto;
+	height: 40%;
+}
+
+#descriptionStyle {
+	color: black;
+	padding-top: 2%;
+	padding-right: 5%;
+	padding-left: 10%;
+	text-align: right;
 }
 
 #trip-back-wrapper {
 	float: left;
 	text-align: left;
-	margin-top: 10%;
+	margin-top: 20%;
+	margin-left: 4%;
 	width: 5%;
 }
 
 #tripBack {
 	width: 100%;
+	font-size: 60px
 }
 
 #trip-forward-wrapper {
 	float: right;
 	text-align: right;
-	margin-top: 10%;
+	margin-top: 20%;
+	margin-right: 4%;
 	width: 5%;
 }
 
 #tripForward {
 	width: 100%;
+	font-size: 60px;
 }
 
 /* Trip Wrapper Styling*/
@@ -132,13 +199,33 @@ ul {
 }
 
 #tripDatesStyle {
+	float: left;
 	font-size: 12px;
-	color: red;
+	color: black;
+	padding-left: 5%;
+	color: black;
 }
 
-img {
-	width: 40%;
+#locationStyle {
+	float: right;
+	padding-right: 5%;
+	padding-top: 2%;
 }
+
+#abilityLevelStyle {
+	float: right;
+	padding-top: 2%;
+	padding-right: 5%;
+}
+
+#urlStyle {
+	float: right;
+	text-align: right;
+	padding-right: 5%;
+	padding-top: 5%;
+}
+
+
 
 
 
