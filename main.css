@@ -21,6 +21,10 @@ button {
  	border-radius: 25px;
 }
 
+button:hover {
+	background-color: lightgrey;
+}
+
 ul {
 	padding: 0;
 	list-style-type: none;
@@ -43,25 +47,32 @@ ul {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
+	box-shadow: 1px 1px 1px 3px lightgrey;
 }
 
 #landing-box {
 	margin-top: 5%;
 	padding: 5%;
-	color: grey;
+	color: black;
 }
 
 #start {
-	margin-top: 20%;
+	margin-top: 30%;
+	background-color: white;
+}
+
+#start:hover {
+	background-color: lightgrey;
 }
 
 #controls-wrapper {
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 15%;
 }
 
 #calendar-wrapper {
 	margin-top: 5%;
+	padding-top: 5%;
 }
 
 #calendar-wrapper, input {
@@ -70,11 +81,16 @@ ul {
 
 #skill-level-wrapper {
 	text-align: center;
-	margin-top: 4%;
+	margin-top: 5%;
+	padding-top: 5%;
 }
 
 #skill-level-wapper, form {
 	margin-top: 3%;
+}
+
+#final-review-wrapper {
+	display: inline-block;
 }
 
 #trip-back-wrapper {

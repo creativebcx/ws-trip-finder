@@ -93,9 +93,9 @@ function currentSelectionAbility() {
 // render final review before submit function so the user can see their selections
 function renderFinalReview(currentStep) {
 	if (state.currentStep == 2) {
-	elFinalReviewBox.html("<h2>You selected:<br><br></h2>\
-		<p>Date: " + state.currentSelectionDate[0].date + "<br><br></p>\
-		<p>Ability Level: " + state.currentSelectionAbility[0].abilityLevel + "<br><br></p>\
+	elFinalReviewBox.html("<h2>You selected:</h2>\
+		<p>Date: " + state.currentSelectionDate[0].date + "</p>\
+		<p>Ability Level: " + state.currentSelectionAbility[0].abilityLevel + "</p>\
 		<p>Click SUBMIT to search your trips");
 	};
 };
