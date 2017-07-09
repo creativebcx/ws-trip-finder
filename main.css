@@ -6,7 +6,7 @@ body {
 
 header {
 	text-align: center;
-	margin-top: 10%;
+	margin-top: 5%;
 	font-size: 30px;
 }
 
@@ -22,7 +22,7 @@ button {
 }
 
 button:hover {
-	background-color: lightgrey;
+	background-color: rgb(250, 204, 179);
 }
 
 ul {
@@ -62,12 +62,12 @@ ul {
 }
 
 #start:hover {
-	background-color: lightgrey;
+	background-color: rgb(250, 204, 179);
 }
 
 #controls-wrapper {
-	text-align: center;
-	margin-top: 15%;
+	margin-top: 20%;
+	margin-bottom: 1%;
 }
 
 #calendar-wrapper {
@@ -89,8 +89,19 @@ ul {
 	margin-top: 3%;
 }
 
+#ability-level {
+	border: none;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+
+}
+
+#ability-level:hover {
+    background-color: rgb(250, 204, 179);
+}
+
 #final-review-wrapper {
-	display: inline-block;
+	margin-top: 0px;
 }
 
 #trip-back-wrapper {

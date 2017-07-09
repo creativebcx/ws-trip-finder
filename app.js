@@ -1,3 +1,4 @@
+var elInnerBox = $('#inner-box-wrapper');
 var elStartButton = $('#landing-box, #start-button');
 var elDatePicker = $('#datepicker');
 var elLandingBox = $('#landing-box');
@@ -49,6 +50,8 @@ elStartOver.click( function(event) {
 
 elSubmitButton.click( function(event) {
 	event.preventDefault();
+	elInnerBox.css('background-image', 'none');
+	elInnerBox.css('background-color', 'rgb(249, 129, 62');
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');
 	elTripForward.removeClass('hidden');
