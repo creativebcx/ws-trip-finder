@@ -50,8 +50,7 @@ elStartOver.click( function(event) {
 });
 
 elSubmitButton.click( function(event) {
-	event.preventDefault();
-	//elInnerBox.css('background-image', 'none');
+	elInnerBox.css('background-color', 'rgba(0, 0, 0, 0.5');
 	//elbackgroundImg.css('background-image', '0.5');
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');

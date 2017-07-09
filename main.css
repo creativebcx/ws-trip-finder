@@ -21,19 +21,17 @@ button {
  	border-radius: 25px;
 }
 
-button:hover {
-	background-color: lightgrey;
-	border: 1px darkgrey solid;
-}
-
 ul {
 	padding: 0;
 	list-style-type: none;
 }
 
 img {
-	padding-left: 5%;
-	margin-top: 0;
+	margin-top: 0px;
+	border: 2px solid white;
+	box-shadow: 1px 1px 1px 1px white;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .hidden {
@@ -65,12 +63,14 @@ img {
 }
 
 #start {
-	margin-top: 30%;
-	background-color: white;
+	margin-top: 15%;
+	background-color: rgb(63, 3, 40);
+	color: white;
 }
 
 #start:hover {
-	background-color: rgb(250, 204, 179);
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
 }
 
 #controls-wrapper {
@@ -163,7 +163,6 @@ img {
 	color: black;
 	padding-top: 2%;
 	padding-right: 5%;
-	padding-left: 10%;
 	text-align: right;
 }
 
@@ -225,9 +224,26 @@ img {
 	padding-top: 5%;
 }
 
+footer {
+	margin-top: 10%;
+	margin-right: 2%;
+	text-align: right;
+	font-family: 'Sacramento', cursive;
+	font-size: 24px;
+}
 
+footer a {
+	color: lightgrey;
+}
 
+footer:hover a {
+	color: black;
+}
 
+#about-description {
+	padding: 5%;
+	font-size: 20px;
+}
 
 
 
