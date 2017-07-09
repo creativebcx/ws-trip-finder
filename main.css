@@ -48,7 +48,6 @@ img {
 	width: 75%;
 	height: 400px;
 	background-image: url(img/sunset1.jpg);
-
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
@@ -130,6 +129,8 @@ img {
     background-color: rgb(250, 204, 179);
 }
 
+/* final review styling*/
+
 #submit {
 	text-align: center;
 	background-color: rgb(63, 3, 40);
@@ -144,6 +145,13 @@ img {
 #final-review-wrapper {
 	padding-top: 3%;
 }
+
+#progressbar {
+	margin-left: 25%;
+	margin-top: 40%;
+	width: 50%;
+}
+
 /* Trip wrapper sytling */
 
 #nameOfTripStyle {
@@ -224,7 +232,7 @@ img {
 	padding-top: 5%;
 }
 
-#urlStyle button:hover {
+#urlStyle:hover button{
 	background-color: lightgrey;
 	border: 1px darkgrey solid;
 }

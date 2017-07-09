@@ -49,6 +49,12 @@ elStartOver.click( function(event) {
 	location.reload(true);
 });
 
+function progressbar () {
+    	$( "#progressbar" ).progressbar({
+     		 value: 37
+    	});
+  	};
+
 elSubmitButton.click( function(event) {
 	//$('#inner-box-wrapper').animate({opacity: 0.3}, 1000);
 	//$('#trip-wrapper:after').animate({opacity: 1}, 1000);
@@ -57,6 +63,8 @@ elSubmitButton.click( function(event) {
          	$('#trip-wrapper').animate({opacity: 0.5}, 1000)
     		}, 100);
 	*/
+
+	progressbar();
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');
 	elTripForward.removeClass('hidden');
