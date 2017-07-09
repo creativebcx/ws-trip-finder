@@ -144,7 +144,7 @@ img {
 #final-review-wrapper {
 	padding-top: 3%;
 }
-/* Trip found styling */
+/* Trip wrapper sytling */
 
 #nameOfTripStyle {
 	text-align: right;
@@ -164,6 +164,7 @@ img {
 	padding-top: 2%;
 	padding-right: 5%;
 	text-align: right;
+	margin-left: 45%;
 }
 
 #trip-back-wrapper {
@@ -192,7 +193,6 @@ img {
 	font-size: 60px;
 }
 
-/* Trip Wrapper Styling*/
 #trip-wrapper {
 	border: none;
 }
@@ -224,6 +224,13 @@ img {
 	padding-top: 5%;
 }
 
+#urlStyle button:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
+}
+
+/* footer and about page styling */
+
 footer {
 	margin-top: 10%;
 	margin-right: 2%;
@@ -243,6 +250,21 @@ footer:hover a {
 #about-description {
 	padding: 5%;
 	font-size: 20px;
+}
+
+#back-to-search {
+	background-color: rgb(63, 3, 40);
+	color: white;
+}
+
+#back-to-search a {
+	text-decoration: none;
+	color: white;
+}
+
+#back-to-search:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
 }
 
 

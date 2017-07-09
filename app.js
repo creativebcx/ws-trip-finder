@@ -50,13 +50,16 @@ elStartOver.click( function(event) {
 });
 
 elSubmitButton.click( function(event) {
-	elInnerBox.css('background-color', 'rgba(0, 0, 0, 0.5');
-	//elbackgroundImg.css('background-image', '0.5');
+	//$('#inner-box-wrapper').animate({opacity: 0.3}, 1000);
+	//$('#trip-wrapper:after').animate({opacity: 1}, 1000);
+	/*
+    	setTimeout(function(){
+         	$('#trip-wrapper').animate({opacity: 0.5}, 1000)
+    		}, 100);
+	*/
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');
 	elTripForward.removeClass('hidden');
-	// for testing - should replace with new DISPLAY function
-	//testDisplaySearchResults();
 	getDataFromApi();
 });
 

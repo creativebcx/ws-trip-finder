@@ -14,8 +14,9 @@
 		<div id="inner-box-wrapper">
 		<div id="without-controls-wrapper">
 			<p id="about-description">The Western Spirit Cycling Adventures Trip Finder was built to help people find mountain and road bike trips.  This application was build with JavaScript, jQuery, HTML5, CSS3, Node.js, and Mongo DB.</p>
+		</div>
 		<div id="controls-wrapper">
-				<button id="back-to-search"><a href="index.html">Back to Search ></a></button>
+				<button id="back-to-search"><a href="index.html">Back to Search</a></button>
 		</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="app.js"></script>
