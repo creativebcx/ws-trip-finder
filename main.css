@@ -27,10 +27,12 @@ ul {
 }
 
 img {
-	margin-top: 0px;
-	border: 2px solid white;
-	box-shadow: 1px 1px 1px 1px white;
-	margin-left: 5%;
+	float: left;
+	width: 40%;
+	margin-top: 2%;
+	border: 2px solid lightgrey;
+	box-shadow: 1px 1px 1px 1px lightgrey;
+	margin-left: 2%;
 	margin-right: 5%;
 }
 
@@ -159,13 +161,7 @@ img {
 	text-align: right;
 	padding-right: 5%;
 	font-size: 30px;
-	padding-top: 5%;
-}
-
-#imgStyleDiv {
-	float: left;
-	width: auto;
-	height: 40%;
+	padding-top: 2%;
 }
 
 #descriptionStyle {
@@ -210,7 +206,8 @@ img {
 	float: left;
 	font-size: 12px;
 	color: black;
-	padding-left: 5%;
+	padding-left: 2%;
+	padding-right: 2%;
 	color: black;
 }
 
@@ -226,11 +223,11 @@ img {
 	padding-right: 5%;
 }
 
-#urlStyle {
+#urlStyle button{
 	float: right;
-	text-align: right;
-	padding-right: 5%;
-	padding-top: 5%;
+	text-align: center;
+	background-color: rgb(63, 3, 40);
+	color: white;
 }
 
 #urlStyle:hover button{

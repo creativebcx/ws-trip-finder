@@ -81,6 +81,8 @@ router.post('/', jsonParser, (req, res) => {
     'img',
     'description',
     'location',
+    'startTrip',
+    'endTrip',
     'abilityLevel'
     ];
   for (let i=0; i<requiredFields.length; i++) {
@@ -100,6 +102,8 @@ router.post('/', jsonParser, (req, res) => {
       img: req.body.img,
       description: req.body.description,
       location: req.body.location,
+      startTrip: req.body.startTrip,
+      endTrip: req.body.endTrip,
       abilityLevel: req.body.abilityLevel
     })
     .then(tripFinder => res.status(201).json(tripFinder.apiRepr()))
