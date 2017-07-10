@@ -41,16 +41,17 @@ img {
 #inner-box-wrapper {
 	box-sizing: border-box;
 	text-align: center;
-	/*border: 0.5px solid black;*/
 	margin-top: 5%;
 	margin-left: auto;
 	margin-right: auto;
 	width: 75%;
 	height: 400px;
+	/*
+	Background Image CSS
 	background-image: url(img/sunset1.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100%;
+	background-size: 100%;*/
 	box-shadow: 1px 1px 1px 3px lightgrey;
 }
 
