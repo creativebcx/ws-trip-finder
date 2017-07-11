@@ -16,7 +16,6 @@ button {
 	background-color: white;
  	width: 150px;
  	height: 45px;
- 	margin: 5%;
  	border: none;
  	border-radius: 25px;
 }
@@ -88,12 +87,14 @@ ul {
 
 #controls-wrapper {
 	text-align: center;
+	margin-top: 5%;
 }
 
 #next {
 	text-align: center;
 	background-color: rgb(191, 7, 55);
 	color: white;
+	margin-left: 5%;
 }
 
 #next:hover {
@@ -149,6 +150,7 @@ ul {
 	text-align: center;
 	background-color: rgb(191, 7, 55);
 	color: white;
+	margin-left: 5%;
 }
 
 #submit:hover {
@@ -224,18 +226,18 @@ ul {
 
 #locationStyle {
 	float: right;
-	padding-right: 5%;
+	margin-bottom: 2%;
+	margin-right: 5%;
 	padding-top: 2%;
 }
 
 #abilityLevelStyle {
-	float: right;
 	padding-top: 2%;
 	padding-right: 5%;
 }
 
 #urlStyle button{
-	float: right;
+	margin-top: 8%;
 	text-align: center;
 	background-color: rgb(191, 7, 55);
 	color: white;
@@ -270,7 +272,7 @@ footer:hover a {
 }
 
 #back-to-search {
-	background-color: rgb(63, 3, 40);
+	background-color: rgb(191, 7, 55);
 	color: white;
 }
 
@@ -284,9 +286,52 @@ footer:hover a {
 	border: 1px darkgrey solid;
 }
 
+/* Admin Page CSS */
 
+#createNewTrip {
+	text-align: center;
+	background-color: rgb(191, 7, 55);
+	color: white;
+}
 
+#createNewTrip:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
+}
 
+#admin-controls-wrapper {
+	margin-top: 0;
+	text-align: center;
+}
+
+#refreshList {
+	margin-left: 5%;
+	text-align: center;
+	background-color: rgb(191, 7, 55);
+	color: white;
+}
+
+#refreshList:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
+}
+
+#customerSite {
+	margin-left: 5%;
+	text-align: center;
+	background-color: rgb(191, 7, 55);
+	color: white;
+}
+
+#customerSite a {
+	text-decoration: none;
+	color: white;
+}
+
+#customerSite:hover {
+	background-color: lightgrey;
+	border: 1px darkgrey solid;
+}
 
 
 
