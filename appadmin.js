@@ -2,7 +2,7 @@ var elrefreshButton = $('#refreshList');
 var state = {
 	currentStep: 0,
 	currentSelectionDate: ["1/1/2018"],
-	currentSelectionAbility: ["Introductory"],
+	currentSelectionAbility: [{"Introductory"}]
 };
 
 elrefreshButton.click( function (event) {
@@ -16,9 +16,9 @@ function getDataFromApi() {
 		date: state.currentSelectionDate[0],
 		abilityLevel: state.currentSelectionAbility[0]
 		})
-
+	console.log(state.currentSelectionAbility[0])
 		.done( function( data ) {
-			console.log(data.trips)
+	console.log(data.trips)
 			// creating variables to format the dates from the start date and end date arrays
 				var newTripListS = data.trips[0].tripDates.startTrip;
 				var newTripListE = data.trips[0].tripDates.endTrip;

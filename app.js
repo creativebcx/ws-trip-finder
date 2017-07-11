@@ -123,7 +123,6 @@ function getDataFromApi() {
 		abilityLevel: state.currentSelectionAbility[0]
 		})
 		.done( function( data ) {
-
 			// creating variables to format the dates from the start date and end date arrays
 				var newTripListS = data.trips[incMove].tripDates.startTrip;
 				var newTripListE = data.trips[incMove].tripDates.endTrip;
