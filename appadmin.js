@@ -21,7 +21,7 @@ function getDataFromApi() {
 		.done( function( data ) {
 
 			// returning the json object from the GET request to the user
-		
+
 			var Trips = data.trips;
 
 			function createTripList (data) {	

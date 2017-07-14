@@ -49,7 +49,7 @@ elStartOver.click( function(event) {
 	location.reload(true);
 });
 
-function progressbar () {
+function progressbar() {
     	$( "#progressbar" ).progressbar({
      		 value: 37
     	});
@@ -69,7 +69,7 @@ function renderCurrentStep(currentStep) {
 		elSkillLevelBox.removeClass('hidden');
 		elCalendarBox.addClass('hidden');
 		currentSelectionDate();
-		}
+	}
 	if (state.currentStep == 2) {
 		elNextButton.addClass('hidden');
 		elSubmitButton.removeClass('hidden');
@@ -114,13 +114,13 @@ function getDataFromApi() {
 		date: state.currentSelectionDate[0],
 		abilityLevel: state.currentSelectionAbility[0]
 		})
-		.done( function( data ) {
+		.done( function(data) {
 			// creating variables to format the dates from the start date and end date arrays
 				var newTripListS = data.trips[incMove].tripDates.startTrip;
 				var newTripListE = data.trips[incMove].tripDates.endTrip;
 
 			// creating a new date list based off of items in the array
-			function createDateList (data) {	
+			function createDateList(data) {	
 				$('#tripDatesStyle').append("<ul>Trip dates: </ul>");
 						for(var i in newTripListS) {
     					var li = "<li>";
@@ -154,40 +154,3 @@ elTripBack.click( function(event) {
 	incMove--;
 	getDataFromApi();
 });
-
-/*
-// Start Bot Animations
-$('.scroll-down').click(function(event) {
-      event.preventDefault();
-      $('body').animate({scrollTop:$(document).height()}, 3000);
-      console.log('hello');
-      //$('body').animate({opacity: 0.0}, 3000);
-      $('#container-bot').css("display", "initial");
-      $('#video').css("display", "initial");
-      $('#bottom-tool').css("display", "initial");
-      $('h2').css("display", "block");
-      //$('body').css('background-image', 'none');
-  });
-// Animation for bot reply so that conversation stays on bot reply screen
-$('input.cleverscriptsubmit').click(function(event) {
-      setTimeout(function(){
-          $('.cleverscriptreply').animate({scrollTop:$(document).height()}, 1000);
-    }, 100);
-});
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
