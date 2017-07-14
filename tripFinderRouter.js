@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 const {TripPackage} = require('./models');
-//mongoose.Promise = global.Promise;
 
 router.use(function(req,res,next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -120,11 +119,10 @@ router.post('/', jsonParser, (req, res) => {
         console.error(err);
         res.status(500).json({error: 'Something went wrong while trying to POST an entry'});
     });
-
 });
 
 router.put('/:id', jsonParser, (req, res) => {
-  const requiredFields = ['date', 'ability', 'id'];
+  const requiredFields = ['id'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -147,7 +145,7 @@ router.put('/:id', jsonParser, (req, res) => {
     ability: req.body.ability
   });
   res.status(204).json(updatedItem);
-})
+});
 
 module.exports = router;
 
