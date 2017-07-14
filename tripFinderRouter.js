@@ -49,6 +49,13 @@ router.get('/', function(req, res, next) {
             case 'Advanced':
               return trip.abilityLevel == 'Advanced' || trip.abilityLevel == 'Intermediate-Advanced';
             break;
+
+            case 'All-Abilities':
+              return trip.abilityLevel == 'Advanced' || trip.abilityLevel == 'Intermediate-Advanced' ||
+                trip.abilityLevel == 'Intermediate' || trip.abilityLevel == 'Introductory-Intermediate' ||
+                trip.abilityLevel == 'Introductory';
+              break;
+              
           }
         })
         console.log(req.query.abilityLevel)

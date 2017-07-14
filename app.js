@@ -56,14 +56,6 @@ function progressbar () {
   	};
 
 elSubmitButton.click( function(event) {
-	//$('#inner-box-wrapper').animate({opacity: 0.3}, 1000);
-	//$('#trip-wrapper:after').animate({opacity: 1}, 1000);
-	/*
-    	setTimeout(function(){
-         	$('#trip-wrapper').animate({opacity: 0.5}, 1000)
-    		}, 100);
-	*/
-
 	progressbar();
 	renderCurrentStep();
 	elSubmitButton.addClass('hidden');

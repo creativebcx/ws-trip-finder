@@ -2,7 +2,9 @@ var elrefreshButton = $('#refreshList');
 var state = {
 	currentStep: 0,
 	currentSelectionDate: ["1/1/2018"],
-	currentSelectionAbility: [{"Introductory"}]
+	currentSelectionAbility: [{
+		abilityLevel: "All-Abilities"
+	}]
 };
 
 elrefreshButton.click( function (event) {
@@ -16,33 +18,25 @@ function getDataFromApi() {
 		date: state.currentSelectionDate[0],
 		abilityLevel: state.currentSelectionAbility[0]
 		})
-	console.log(state.currentSelectionAbility[0])
 		.done( function( data ) {
-	console.log(data.trips)
-			// creating variables to format the dates from the start date and end date arrays
-				var newTripListS = data.trips[0].tripDates.startTrip;
-				var newTripListE = data.trips[0].tripDates.endTrip;
 
-			// creating a new date list based off of items in the array
-			function createDateList (data) {	
-				$('#tripDatesStyle').append("<ul>Trip dates: </ul>");
-						for(var i in newTripListS) {
-    					var li = "<li>";
-    					$("ul").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
+			// returning the json object from the GET request to the user
+		
+			var Trips = data.trips;
+
+			function createTripList (data) {	
+				$('#trip-list-wrapper').append("<div></div>");
+						for (var i in Trips) {
+    					var div = "<div id='trip-list-inner-wrapper'>";
+    					$("#trip-list-wrapper").append(div.concat("<div id='adminName'>" + Trips[i].nameOfTrip + "</div>") + " " +
+    						//"<a href='Trips[i]._id'>Select</a>" + " " +
+    						"<div id='adminAbility'>Ability Level: " + Trips[i].abilityLevel + "</div>" + " " +
+    						"<div id='adminStartStyle'>Current Start Dates: " + Trips[i].tripDates.startTrip + "</div>"
+    						)
+
 					}				
 			};
-			
-			// returning the json object from the GET request to the user
-			$('#trip-list-wrapper').html(
-				'<div id="nameOfTripStyle">' + data.trips[0].nameOfTrip + '</div>' +
-				'<div id="imgStyleDiv"><img id="imgStyle" src="'+ data.trips[0].img +'" alt="BB"></div>' +
-				'<div id="descriptionStyle">' + data.trips[0].description + '</div>' +
-				'<div id="locationStyle">Location: ' + data.trips[0].location + '</div>' +
-				'<div id="tripDatesStyle"></div>' +
-				'<div id="abilityLevelStyle">Ability level: ' + data.trips[0].abilityLevel + '</div>' +
-				'<div id="urlStyle"><a href="' + data.trips[0].url + 
-				'" target="_blank"><button>Find Out More!</button></a></div>'
-			);
-			createDateList();
+
+			createTripList();
 		});
 };
