@@ -1,4 +1,6 @@
 var elrefreshButton = $('#refreshList');
+var elNewTripButton = $('#createNewTrip');
+var newTripBoxStyle = $('#newTripBoxStyle');
 var state = {
 	currentStep: 0,
 	currentSelectionDate: ["1/1/2018"],
@@ -6,6 +8,11 @@ var state = {
 		abilityLevel: "All-Abilities"
 	}]
 };
+
+elNewTripButton.click( function(event) {
+  newTripBoxStyle.removeClass('hidden');
+  getDataFromApi();
+})
 
 elrefreshButton.click( function (event) {
 	getDataFromApi();
@@ -43,3 +50,9 @@ function getDataFromApi() {
 			createTripList();
 		});
 };
+
+/*
+jQuery.post( wsTripFinderAPI, function(data) {
+  
+})
+*/

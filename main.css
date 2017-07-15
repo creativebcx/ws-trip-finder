@@ -413,3 +413,17 @@ footer:hover a {
 	width: 80%;
 	height: auto;
 }
+
+#newTripBoxStyle {
+	margin-top: 2%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 1%;
+	border: 2px solid grey;
+	border-radius: 20px;
+	box-shadow: 1px 1px 1px 1px lightgrey;
+}
+
+#newTripBoxStyle form {
+	text-align: left;
+}

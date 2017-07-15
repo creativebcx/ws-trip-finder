@@ -15,30 +15,30 @@ router.use(function(req,res,next) {
 
 router.get('/', function(req, res, next) {
   TripPackage
-    .find()
-    .limit(20)
-    .exec()
-    .then(Trips => {
-      let abilityLevel = req.query.abilityLevel.abilityLevel;
-      let date = req.query.date.date;
-      let response = Trips.filter( function (trip) {
-       //console.log(abilityLevel.abilityLevel, trip.abilityLevel);
-       console.log(date, trip.tripDates.startTrip);
-        //return abilityLevel == trip.abilityLevel;
-        switch (abilityLevel) {
-          case 'Introductory':
-            return trip.abilityLevel == 'Introductory' || trip.abilityLevel == 'Introductory-Intermediate';
+   .find()
+   .limit(20)
+   .exec()
+   .then(Trips => {
+     let abilityLevel = req.query.abilityLevel.abilityLevel;
+     let date = req.query.date.date;
+     let response = Trips.filter( function (trip) {
+      //console.log(abilityLevel.abilityLevel, trip.abilityLevel);
+      console.log(date, trip.tripDates.startTrip);
+       //return abilityLevel == trip.abilityLevel;
+       switch (abilityLevel) {
+        case 'Introductory':
+          return trip.abilityLevel == 'Introductory' || trip.abilityLevel == 'Introductory-Intermediate';
+        break;
+
+        case 'Introductory-Intermediate':
+         return trip.abilityLevel == 'Introductory-Intermediate' || trip.abilityLevel == 'Introductory' 
+           || trip.abilityLevel == 'Intermediate';
+         break;
+
+        case 'Intermediate':
+          return trip.abilityLevel == 'Intermediate' || trip.abilityLevel == 'Introductory-Intermediate' || 
+            trip.abilityLevel == 'Intermediate-Advanced';
           break;
-
-          case 'Introductory-Intermediate':
-            return trip.abilityLevel == 'Introductory-Intermediate' || trip.abilityLevel == 'Introductory' 
-             || trip.abilityLevel == 'Intermediate';
-            break;
-
-          case 'Intermediate':
-           return trip.abilityLevel == 'Intermediate' || trip.abilityLevel == 'Introductory-Intermediate' || 
-             trip.abilityLevel == 'Intermediate-Advanced';
-           break;
 
            case 'Intermediate-Advanced':
             return trip.abilityLevel == 'Intermediate-Advanced' || trip.abilityLevel == 'Intermediate' ||

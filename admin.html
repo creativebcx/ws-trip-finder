@@ -17,6 +17,27 @@
 				<button id="refreshList">Refresh List</button>
 				<button id="customerSite"><a href="index.html">Trip Finder Page</a></button>
 		</div>
+		<div id='newTripBoxStyle' class='hidden'>
+      <form>
+        <input type='text'>Trip Name:</input>
+        <select name='abilityLevelCreate'>Ability Level:
+          <option value='Introductory'>Introductory</option>
+          <option value='Introductory-Intermediate'>Introductory-Intermediate</option>
+          <option value='Intermediate'>Intermediate</option>
+        	<option value='Intermediate-Advanced'>Intermediate-Advanced</option>
+        	<option value='Advanced'>Advanced</option>
+        </select>
+        <input type='text'>WS Website URL: </input>
+        <input type='text'>Description of Trip: </input>
+        <input type='text'>Location of Trip: </input>
+        <input type='text'>Start Dates: </input>
+        <input type='text'>End Dates: </input>
+    	</form>
+    	<div id="admin-form-controls">
+				<button id="goBackToList">Back to List</button>
+				<button id="submitNewTrip">!Submit New Trip</button>
+			</div>
+    </div>
 		<div id="trip-list-wrapper"></div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
