@@ -1,7 +1,7 @@
 {
   "name": "ws-trip-finder-wireframe",
   "version": "1.0.0",
-  "description": "WS Trip Finder ",
+  "description": "A tool to help people locate specific road and mountain bike tours offered by Western Spirit Adventure Cycling.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "jquery-ui": "^1.12.1",
     "mongoose": "^4.11.0",
     "morgan": "^1.8.2",
     "uuid": "^3.1.0"

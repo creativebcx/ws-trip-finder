@@ -1,3 +1,4 @@
+//var autocomplete = require( "jquery-ui/ui/widgets/autocomplete" );
 var elInnerBox = $('#inner-box-wrapper');
 var elbackgroundImg = $('background-image');
 var elStartButton = $('#landing-box, #start-button');

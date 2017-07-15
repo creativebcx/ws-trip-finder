@@ -351,13 +351,14 @@ footer:hover a {
 	margin-left: 5%;
 	margin-right: 5%;
 	padding: 1%;
-	border: 3px solid grey;
+	border: 2px solid grey;
 	border-radius: 20px;
 	box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 #adminInfoBox {
 	display: inline-block;
+	float: left;
 	width: 60%;
 }
 
@@ -409,8 +410,6 @@ footer:hover a {
 
 #adminImgCheckImg {
 	border: 2px solid grey;
-	border-radius: 20px;
 	width: 80%;
 	height: auto;
-	box-shadow: 1px 1px 1px 1px lightgrey;
 }
