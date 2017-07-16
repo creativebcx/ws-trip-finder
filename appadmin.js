@@ -1,6 +1,7 @@
 var elrefreshButton = $('#refreshList');
 var elNewTripButton = $('#createNewTrip');
 var newTripBoxStyle = $('#newTripBoxStyle');
+var elSubmitNewTrip = $('#submitNewTrip');
 var state = {
 	currentStep: 0,
 	currentSelectionDate: ["1/1/2018"],
@@ -14,8 +15,18 @@ elNewTripButton.click( function(event) {
   getDataFromApi();
 })
 
-elrefreshButton.click( function (event) {
+elrefreshButton.click( function(event) {
 	getDataFromApi();
+});
+
+elSubmitNewTrip.click( function(event) {
+  var newNameOfTrip = $('#adminNewName').val();
+  var newURL = $('#adminNewButton').val();
+  var newLocation = $('#adminNewLocation').val();
+  var newStart = $('#adminNewStart').val();
+  var newEnd = $('#adminNewEnd').val();
+  var newDescription = $('#adminNewDescription').val();
+  var newAbility = $('#adminNewAbility').val();
 });
 
 function getDataFromApi() {
@@ -33,26 +44,18 @@ function getDataFromApi() {
 
 			function createTripList (data) {	
 				$('#trip-list-wrapper').append("<div></div>");
-						for (var i in Trips) {
-    					var div = "<div id='trip-list-inner-wrapper'>";
-    					$("#trip-list-wrapper").append(div.concat("<div id='adminInfoBox'><div id='adminName'>" + 
-                Trips[i].nameOfTrip + "</div>") + " " +
-    						//"<a href='Trips[i]._id'>Select</a>" + " " +
-    						"<div id='adminAbility'>Ability Level: " + Trips[i].abilityLevel + "</div>" + " " +
-                "<div id='adminStartStyle'>Current Start Dates: " + Trips[i].tripDates.startTrip + "</div></div>" +
-                "<div id='adminButtonBox'><button id='adminUpdateTrip'>Edit Trip</button></div>" +
-                "<div id='adminImgBox'><img id='adminImgCheckImg' src='" + Trips[i].img + "'></img></div>"               
-    						)
-
+					for (var i in Trips) {
+    				var div = "<div id='trip-list-inner-wrapper'>";
+    				$("#trip-list-wrapper").append(div.concat("<div id='adminInfoBox'><div id='adminName'>" + 
+              Trips[i].nameOfTrip + "</div>") + " " +
+    					//"<a href='Trips[i]._id'>Select</a>" + " " +
+    					"<div id='adminAbility'>Ability Level: " + Trips[i].abilityLevel + "</div>" + " " +
+              "<div id='adminStartStyle'>Current Start Dates: " + Trips[i].tripDates.startTrip + "</div></div>" +
+              "<div id='adminButtonBox'><button id='adminUpdateTrip'>Edit Trip</button></div>" +
+              "<div id='adminImgBox'><img id='adminImgCheckImg' src='" + Trips[i].img + "'></img></div>"               
+    				)
 					}				
 			};
-
 			createTripList();
 		});
 };
-
-/*
-jQuery.post( wsTripFinderAPI, function(data) {
-  
-})
-*/
