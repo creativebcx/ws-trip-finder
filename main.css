@@ -239,19 +239,21 @@ a {
 
 #locationStyle {
 	float: right;
-	margin-bottom: 2%;
 	margin-right: 5%;
 	padding-top: 2%;
 }
 
 #abilityLevelStyle {
+	float: right;
+	margin-bottom: 2%;
+	margin-right: 5%;
 	padding-top: 2%;
-	padding-right: 5%;
 }
 
 #urlStyle button{
-	margin-top: 8%;
-	text-align: center;
+	margin-top: 2%;
+	margin-right: 1%;
+	float: right;
 	background-color: rgb(191, 7, 55);
 	color: white;
 }

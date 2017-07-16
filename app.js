@@ -30,7 +30,8 @@ elStartButton.click( function(event) {
 });
 
 function datePickerStart() {
-	elDatePicker.datepicker();
+	elDatePicker.datepicker( {
+	});
 };
 
 function startTripFinder() {

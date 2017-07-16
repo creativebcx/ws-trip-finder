@@ -117,8 +117,8 @@
 
 #newTripBoxStyle {
   margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
   padding: 1%;
   border: 2px solid grey;
   border-radius: 20px;
@@ -126,48 +126,69 @@
 }
 
 #newTripBoxStyle form {
-  margin: 0;
 }
 
 #adminNewName {
   display: inline-block;
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 1%;
   margin-top: 1%;
 }
 
 #adminNewButton {
   display: inline-block;
-  width: 30%;
   margin-bottom: 1%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 1%;
-  margin-right: 4%;
-  margin-left: 1%;
 }
 
 #adminNewLocation {
   display: inline-block;
-  width: 30%
   margin-bottom: 1%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 1%;
-  margin-left: 1%;
 }
 
 #adminNewStart {
   display: inline-block;
-  width: 30%
   margin-bottom: 1%;
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-right: 4%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%
 }
 
 #adminNewEnd {
   display: inline-block;
-  width: 30%
   margin-bottom: 1%;
-  margin-top: 1%;
-  margin-left: 1%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%
+}
+
+#adminNewDescription {
+  display: inline-block;
+  margin-bottom: 1%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%
+}
+
+#adminNewAbility {
+  display: inline-block;
+  margin-bottom: 1%;
+  width: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%
 }
 
 #admin-form-controls {
