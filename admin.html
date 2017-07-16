@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WS Admin Trip Finder</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="admin-main.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<!--<a href="http://www.freepik.com/free-photos-vectors/background">Background vector created by Freepik</a>-->
+</head>
+<body>
+	<div id="page-wrapper">
+		<header id="title">Western Spirit Cycling Adventures Trip Finder <br> Admin Page</header>
+		<div id="logo-wrapper"><img id="logoStyle" src="img/fb_profile.jpg"></img></div>
+		<div id="admin-controls-wrapper">
+			<button id="createNewTrip">Create New Trip</button>
+			<button id="refreshList">Refresh List</button>
+			<button id="customerSite"><a href="index.html">Trip Finder Page</a></button>
+		</div>
+		<div id='newTripBoxStyle' class='hidden'>
+      <form>
+        Trip Name: <input id='adminNewName' type='text'></input>
+        WS Website URL: <input id='adminNewButton' type='text'></input>
+        Location of Trip: <input id='adminNewLocation' type='text'></input><br>
+        Start Dates: <input id='adminNewStart' type='text'></input>
+        End Dates: <input id='adminNewEnd' type='text'></input><br>
+        Description of Trip: <input id='adminNewDescription' type='text'></input>
+        Ability Level:<select id='adminNewAbility' name='abilityLevelCreate'>
+          <option value='Introductory'>Introductory</option>
+          <option value='Introductory-Intermediate'>Introductory-Intermediate</option>
+          <option value='Intermediate'>Intermediate</option>
+        	<option value='Intermediate-Advanced'>Intermediate-Advanced</option>
+        	<option value='Advanced'>Advanced</option>
+        </select>
+    	</form>
+    	<div id="admin-form-controls">
+				<button id="goBackToList">Back to List</button>
+				<button id="submitNewTrip">Submit New Trip</button>
+			</div>
+    </div>
+		<div id="trip-list-wrapper"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="appadmin.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+</body>
+</html>
