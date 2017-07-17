@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
       let date = req.query.date.date;
       let response = Trips.filter( function (trip) {
       console.log(trip.abilityLevel);
-      console.log(date, trip.tripDates.startTrip);
+      //console.log(date, trip.tripDates.startTrip);
       //return abilityLevel == trip.abilityLevel;
       switch (abilityLevel) {
         case 'Introductory':
