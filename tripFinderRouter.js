@@ -25,12 +25,12 @@ router.get('/', function(req, res, next) {
       //console.log(abilityLevel.abilityLevel, trip.abilityLevel);
       //console.log(date, trip.tripDates.startTrip);
       //return abilityLevel == trip.abilityLevel;
-      switch (date) {
-        case date:
-          return trip.tripDates.startTrip == moment(date).subtract(14, 'days').calendar() ||
-            trip.tripDates.startTrip == moment(date).add(14, 'days').calendar() 
-        break;
-        }
+      if (date == '8/1/2017') {
+        console.log("Collection worked")
+      }
+      else {
+        console.log("collection failed")
+      }
 
       switch (abilityLevel) {
         case 'Introductory':
