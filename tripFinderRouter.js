@@ -57,14 +57,14 @@ router.get('/', function(req, res, next) {
               
         }
       })
-
+/*
      if (trip.tripDates.startTrip == '8/7/2017') {
           console.log("Date test working");
       }
       else {
           console.log("Date test NOT working");
       }
-
+*/
         res.json({
           trips: response
         });
