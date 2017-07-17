@@ -53,18 +53,16 @@ router.get('/', function(req, res, next) {
           return trip.abilityLevel == 'Advanced' || trip.abilityLevel == 'Intermediate-Advanced' ||
             trip.abilityLevel == 'Intermediate' || trip.abilityLevel == 'Introductory-Intermediate' ||
             trip.abilityLevel == 'Introductory';
-        break;
-              
+        break;      
         }
 
-      if (date == '8/7/2017') {
-          console.log("Date test working");
+      switch (date) {
+        case date:
+          return trip.tripDates.startTrip == date.subtract(14, 'days').calendar() ||
+            trip.tripDates.startTrip == date.add(14, 'days').calendar();
+        break;
       }
-      else {
-          console.log("Date test NOT working");
-      }
-
-      })
+    })
 
         res.json({
           trips: response
