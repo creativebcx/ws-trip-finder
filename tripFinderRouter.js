@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
       let response = Trips.filter( function (trip) {
       //console.log(abilityLevel.abilityLevel, trip.abilityLevel);
       //console.log(date, trip.tripDates.startTrip);
-       //return abilityLevel == trip.abilityLevel;
+      //return abilityLevel == trip.abilityLevel;
       switch (abilityLevel) {
         case 'Introductory':
           return trip.abilityLevel == 'Introductory' || trip.abilityLevel == 'Introductory-Intermediate';
@@ -58,13 +58,13 @@ router.get('/', function(req, res, next) {
 
       switch (date) {
         case date:
-          return trip.tripDates.startTrip == date.subtract(14, 'days').calendar() ||
-            trip.tripDates.startTrip == date.add(14, 'days').calendar();
+          return trip.tripDates.startTrip == moment(date).subtract(14, 'days').calendar() ||
+            trip.tripDates.startTrip == moment(date).add(14, 'days').calendar() 
         break;
       }
     })
 
-        res.json({
+      res.json({
           trips: response
         });
       })
