@@ -22,16 +22,9 @@ router.get('/', function(req, res, next) {
       let abilityLevel = req.query.abilityLevel.abilityLevel;
       let date = req.query.date.date;
       let response = Trips.filter( function (trip) {
-      //console.log(abilityLevel.abilityLevel, trip.abilityLevel);
-      //console.log(date, trip.tripDates.startTrip);
+      console.log(abilityLevel.abilityLevel, trip.abilityLevel);
+      console.log(date, trip.tripDates.startTrip);
       //return abilityLevel == trip.abilityLevel;
-      if (date == '8/1/2017') {
-        console.log("Collection worked")
-      }
-      else {
-        console.log("collection failed")
-      }
-
       switch (abilityLevel) {
         case 'Introductory':
           return trip.abilityLevel == 'Introductory' || trip.abilityLevel == 'Introductory-Intermediate';
