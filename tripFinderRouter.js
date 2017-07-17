@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
       let abilityLevel = req.query.abilityLevel.abilityLevel;
       let date = req.query.date.date;
       let response = Trips.filter( function (trip) {
-      console.log(abilityLevel.abilityLevel, trip.abilityLevel);
+      console.log(trip.abilityLevel);
       console.log(date, trip.tripDates.startTrip);
       //return abilityLevel == trip.abilityLevel;
       switch (abilityLevel) {
@@ -108,10 +108,8 @@ router.post('/', jsonParser, (req, res) => {
       img: req.body.img,
       description: req.body.description,
       location: req.body.location,
-      tripDates: {
-        startTrip: req.body.startTrip,
-        endTrip: req.body.endTrip
-      },
+      startTrip: req.body.startTrip,
+      endTrip: req.body.endTrip,
       abilityLevel: req.body.abilityLevel
     })
     .then(tripFinder => res.status(201).json(tripFinder.apiRepr()))

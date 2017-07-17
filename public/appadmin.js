@@ -50,7 +50,7 @@ function getDataFromApi() {
               Trips[i].nameOfTrip + "</div>") + " " +
     					//"<a href='Trips[i]._id'>Select</a>" + " " +
     					"<div id='adminAbility'>Ability Level: " + Trips[i].abilityLevel + "</div>" + " " +
-              "<div id='adminStartStyle'>Current Start Dates: " + Trips[i].tripDates.startTrip + "</div></div>" +
+              "<div id='adminStartStyle'>Current Start Dates: " + Trips[i].startTrip + "</div></div>" +
               "<div id='adminButtonBox'><button id='adminUpdateTrip'>Edit Trip</button></div>" +
               "<div id='adminImgBox'><img id='adminImgCheckImg' src='" + Trips[i].img + "'></img></div>"               
     				)
