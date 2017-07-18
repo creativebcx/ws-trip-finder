@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const moment = require('moment');
+moment().format();
 
 const {TripPackage} = require('./models');
 
@@ -14,17 +16,20 @@ router.use(function(req,res,next) {
 });
 
 router.get('/', function(req, res, next) {
+  let date = moment(req.query.date.date, "MM-DD-YYYY");
+    let tMinus = moment(date, "MM-DD-YYYY").subtract(14, 'd');
+    let tPlus = moment(date, "MM-DD-YYYY").add(14, 'd');
+    let tMax = moment.max(tMinus, tPlus);
+    let tMin = moment.min(tMinus, tPlus);
+
   TripPackage
-   .find()
+   .find({ startTrip: {$eq: "2/19/2018"} })
    .limit(20)
    .exec()
    .then(Trips => {
       let abilityLevel = req.query.abilityLevel.abilityLevel;
-      let date = req.query.date.date;
       let response = Trips.filter( function (trip) {
       console.log(trip.abilityLevel);
-      //console.log(date, trip.tripDates.startTrip);
-      //return abilityLevel == trip.abilityLevel;
       switch (abilityLevel) {
         case 'Introductory':
           return trip.abilityLevel == 'Introductory' || trip.abilityLevel == 'Introductory-Intermediate';
@@ -56,10 +61,9 @@ router.get('/', function(req, res, next) {
         break;      
         }
       })
-        
 
       res.json({
-          trips: response
+          trips:Trips
         });
       })
       .catch(err => {
