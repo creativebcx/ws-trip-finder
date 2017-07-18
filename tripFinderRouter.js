@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
     let tMin = moment.min(tMinus, tPlus);
 
   TripPackage
-   .find({ startTrip: {$eq: "2/19/2018"} })
+   .find() //{ startTrip: {$eq: "2/19/2018"} }
    .limit(20)
    .exec()
    .then(Trips => {

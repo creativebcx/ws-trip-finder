@@ -118,6 +118,7 @@ function getDataFromApi() {
 		})
 		.done( function(data) {
 			// creating variables to format the dates from the start date and end date arrays
+
 				var newTripListS = data.trips[incMove].startTrip;
 				var newTripListE = data.trips[incMove].endTrip;
 
