@@ -110,7 +110,7 @@ function renderFinalReview(currentStep) {
 
 // ajax GET request
 function getDataFromApi() {
-	var wsTripFinderAPI = "https://secure-bastion-80953.herokuapp.com/trip-finder";
+	var wsTripFinderAPI = "/trip-finder";
 	$.getJSON( wsTripFinderAPI, {
 		format: 'json',
 		date: state.currentSelectionDate[0],
@@ -118,7 +118,7 @@ function getDataFromApi() {
 		})
 		.done( function(data) {
 			// creating variables to format the dates from the start date and end date arrays
-
+				console.log(data);
 				var newTripListS = data.trips[incMove].startTrip;
 				var newTripListE = data.trips[incMove].endTrip;
 
@@ -138,7 +138,7 @@ function getDataFromApi() {
 				'<div id="descriptionStyle">' + data.trips[incMove].description + '</div>' +
 				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
 				'<div id="tripDatesStyle"></div>' +
-				'<div id="abilityLevelStyle">Ability level: ' + data.trips[incMove].abilityLevel + '</div>' +
+				'<div id="abilityLevelStyle">Ability Level: ' + data.trips[incMove].abilityLevel + '</div>' +
 				'<div id="urlStyle"><a href="' + data.trips[incMove].url + 
 				'" target="_blank"><button>Find Out More!</button></a></div>'
 			);

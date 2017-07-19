@@ -238,12 +238,14 @@ a {
 }
 
 #locationStyle {
+	font-size: 12px;
 	float: right;
 	margin-right: 5%;
 	padding-top: 2%;
 }
 
 #abilityLevelStyle {
+	font-size: 12px;
 	float: right;
 	margin-bottom: 2%;
 	margin-right: 5%;

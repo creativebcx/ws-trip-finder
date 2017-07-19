@@ -30,7 +30,7 @@ elSubmitNewTrip.click( function(event) {
 });
 
 function getDataFromApi() {
-	var wsTripFinderAPI = "https://secure-bastion-80953.herokuapp.com/trip-finder";
+	var wsTripFinderAPI = "/trip-finder";
 	$.getJSON( wsTripFinderAPI, {
 		format: 'json',
 		date: state.currentSelectionDate[0],
