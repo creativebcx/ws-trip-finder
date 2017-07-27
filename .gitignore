@@ -1,4 +1,3 @@
 node_modules
 .env
-wstripsdb.json
-jquery-ui-1.12.1.custom
+config.js

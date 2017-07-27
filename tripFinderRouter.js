@@ -16,26 +16,22 @@ router.use(function(req,res,next) {
 });
 
 router.get('/', function(req, res, next) {
-  let date = moment(req.query.date.date, "MM-DD-YYYY");
+  let date = moment(req.query.date.date, 'MM-DD-YYYY');
   let tMinus = moment(date, "MM-DD-YYYY").subtract(14, 'd');
   let tPlus = moment(date, "MM-DD-YYYY").add(14, 'd');
-  let tMax = moment.max(tMinus, tPlus);
-  let tMin = moment.min(tMinus, tPlus);
-  
-
+  let tMax = moment.max(tMinus, tPlus).format("MM/DD/YYYY");
+  let tMin = moment.min(tMinus, tPlus).format("MM/DD/YYYY");
+  let timeStampMin
+  console.log("Start Date Range From: " + tMin + " - " + tMax)
   TripPackage
-    .find({
-      startTrip: {
-        $gte: tMinus.toDate(),
-        $lte: tPlus.toDate()
-      }
-    })
+    .find()
     .limit(20)
     .exec()
     .then(Trips => {
+      //console.log(Trips);
       let abilityLevel = req.query.abilityLevel.abilityLevel;
       let response = Trips.filter( function (trip) {
-      console.log(date, abilityLevel);
+      //console.log(abilityLevel);
       switch (abilityLevel) {
         case 'Introductory':
           return trip.abilityLevel == 'Introductory' || trip.abilityLevel == 'Introductory-Intermediate';
@@ -59,17 +55,17 @@ router.get('/', function(req, res, next) {
         case 'Advanced':
           return trip.abilityLevel == 'Advanced' || trip.abilityLevel == 'Intermediate-Advanced';
         break;
-
+        
         case 'All-Abilities':
           return trip.abilityLevel == 'Advanced' || trip.abilityLevel == 'Intermediate-Advanced' ||
             trip.abilityLevel == 'Intermediate' || trip.abilityLevel == 'Introductory-Intermediate' ||
             trip.abilityLevel == 'Introductory';
-        break;      
+        break;     
         }
       })
 
       res.json({
-          trips: Trips
+          trips: response
         });
       })
       .catch(err => {

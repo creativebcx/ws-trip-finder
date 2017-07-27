@@ -128,7 +128,7 @@ function getDataFromApi() {
 						for(var i in newTripListS) {
     					var li = "<li>";
     					$("ul").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
-					}				
+						}				
 			};
 			
 			// returning the json object from the GET request to the user
