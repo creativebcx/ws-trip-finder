@@ -17,14 +17,55 @@ router.use(function(req,res,next) {
 
 router.get('/', function(req, res, next) {
   let date = moment(req.query.date.date, 'MM-DD-YYYY');
-  let tMinus = moment(date, "MM-DD-YYYY").subtract(14, 'd');
-  let tPlus = moment(date, "MM-DD-YYYY").add(14, 'd');
-  let tMax = moment.max(tMinus, tPlus).format("MM/DD/YYYY");
+  //let tMinus = moment(date, "MM-DD-YYYY").subtract(14, 'd');
+  //let tPlus = moment(date, "MM-DD-YYYY").add(14, 'd');
+  //let tMax = [moment.max(tMinus, tPlus).format("MM/DD/YYYY")];
+  //let tMin = moment.min(tMinus, tPlus).unix(Number);
+
+    let dateRange = [moment(date, "MM-DD-YYYY").subtract(14, 'd').format("MM/DD/YYYY")];
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(13, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(12, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(11, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(10, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(09, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(08, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(07, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(06, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(05, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(04, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(03, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").subtract(02, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(01, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(02, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(03, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(04, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(05, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(06, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(07, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(08, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(09, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(10, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(11, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(12, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(13, 'd').format("MM/DD/YYYY"));
+      dateRange.push(moment(date, "MM-DD-YYYY").add(14, 'd').format("MM/DD/YYYY"));
+
+  console.log(dateRange);
+  /* original date array function work - not functional
   let tMin = moment.min(tMinus, tPlus).format("MM/DD/YYYY");
-  let timeStampMin
-  console.log("Start Date Range From: " + tMin + " - " + tMax)
+  let arrayTest = ["8/7/2017", "8/8/2017"];
+  function makeRange() {
+    let dateRange = [];
+    for (var i=tMin; i<=tMax; i) {
+      dateRange.push(i);
+    }
+    return dateRange;
+  };*/
+  //let arrayTest = ["8/7/2017", "8/8/2017"];
   TripPackage
-    .find()
+    .find({startTrip: {$in: dateRange}})
+    //.find()
     .limit(20)
     .exec()
     .then(Trips => {

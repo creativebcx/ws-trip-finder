@@ -103,7 +103,7 @@ function renderFinalReview(currentStep) {
 	if (state.currentStep == 2) {
 	elFinalReviewBox.html("<h2>You selected:</h2>\
 		<p>Date: " + state.currentSelectionDate[0].date + "</p>\
-		<p>Ability Level: " + state.currentSelectionAbility[0].abilityLevel + "</p>\
+		<p>Experience Level: " + state.currentSelectionAbility[0].abilityLevel + "</p>\
 		<p>Click SUBMIT to search your trips");
 	};
 };
@@ -138,7 +138,7 @@ function getDataFromApi() {
 				'<div id="descriptionStyle">' + data.trips[incMove].description + '</div>' +
 				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
 				'<div id="tripDatesStyle"></div>' +
-				'<div id="abilityLevelStyle">Ability Level: ' + data.trips[incMove].abilityLevel + '</div>' +
+				'<div id="abilityLevelStyle">Experience Level: ' + data.trips[incMove].abilityLevel + '</div>' +
 				'<div id="urlStyle"><a href="' + data.trips[incMove].url + 
 				'" target="_blank"><button>Find Out More!</button></a></div>'
 			);
