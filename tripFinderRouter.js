@@ -62,7 +62,7 @@ router.get('/', function(req, res, next) {
     }
     return dateRange;
   };*/
-  //let arrayTest = ["8/7/2017", "8/8/2017"];
+
   TripPackage
     .find({startTrip: {$in: dateRange}})
     //.find()
