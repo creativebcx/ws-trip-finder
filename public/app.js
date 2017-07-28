@@ -117,6 +117,13 @@ function getDataFromApi() {
 		abilityLevel: state.currentSelectionAbility[0]
 		})
 		.done( function(data) {
+			if (data.trips[0] == undefined) {
+				$('#trip-wrapper').html(
+				'<div id="nameOfTripStyle" style="text-align: center; padding: 2%;"> \
+				Sorry, there are not any trips at that time.  Please search again!</div>'
+				)
+			}
+			else {
 			// creating variables to format the dates from the start date and end date arrays
 				console.log(data);
 				var newTripListS = data.trips[incMove].startTrip;
@@ -143,6 +150,7 @@ function getDataFromApi() {
 				'" target="_blank"><button>Find Out More!</button></a></div>'
 			);
 			createDateList();
+			};
 		});
 };
 
