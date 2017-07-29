@@ -125,7 +125,6 @@ function getDataFromApi() {
 			}
 			else {
 			// creating variables to format the dates from the start date and end date arrays
-				console.log(data);
 				var newTripListS = data.trips[incMove].startTrip;
 				var newTripListE = data.trips[incMove].endTrip;
 
@@ -143,11 +142,13 @@ function getDataFromApi() {
 				'<div id="nameOfTripStyle">' + data.trips[incMove].nameOfTrip + '</div>' +
 				'<div id="imgStyleDiv"><img id="imgStyle" src="'+ data.trips[incMove].img +'" alt="BB"></div>' +
 				'<div id="descriptionStyle">' + data.trips[incMove].description + '</div>' +
-				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
+				'<div id="locationExperienceDateUrlWrapper">' +
 				'<div id="tripDatesStyle"></div>' +
+				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
 				'<div id="abilityLevelStyle">Experience Level: ' + data.trips[incMove].abilityLevel + '</div>' +
 				'<div id="urlStyle"><a href="' + data.trips[incMove].url + 
-				'" target="_blank"><button>Find Out More!</button></a></div>'
+				'" target="_blank"><button>Find Out More!</button></a></div>' +
+				'</div>'
 			);
 			createDateList();
 			};
@@ -156,7 +157,7 @@ function getDataFromApi() {
 
 // toggle buttons to search through trips that have been returned from the GET request
 elTripForward.click( function(event) {
-	incMove++;
+	incMove ++
 	elTripBack.removeClass('hidden');
 	getDataFromApi();
 });

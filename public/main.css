@@ -4,6 +4,8 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Montserrat', sans-serif;
+	/*background-image: url(img/backgroundimage.jpg);
+	background-size: cover;*/
 }
 
 header {
@@ -30,6 +32,7 @@ ul {
 #imgStyleDiv img {
 	float: left;
 	width: 40%;
+	height: 80%;
 	margin-top: 2;
 	border: 2px solid lightgrey;
 	box-shadow: 1px 1px 1px 1px lightgrey;
@@ -60,6 +63,7 @@ ul {
 	width: 75%;
 	height: 400px;
 	border-radius: 20px;
+	background-color: white;
 	/*
 	Background Image CSS
 	background-image: url(img/sunset1.jpg);
@@ -228,6 +232,13 @@ a {
 	border: none;
 }
 
+#locationExperienceDateUrlWrapper {
+	margin-top: 2%;
+	padding-bottom: 2%;
+	margin-right: 5%;
+	margin-left: 45%;
+}
+
 #tripDatesStyle {
 	float: left;
 	font-size: 12px;
@@ -240,7 +251,6 @@ a {
 #locationStyle {
 	font-size: 12px;
 	float: right;
-	margin-right: 5%;
 	padding-top: 2%;
 }
 
@@ -248,19 +258,17 @@ a {
 	font-size: 12px;
 	float: right;
 	margin-bottom: 2%;
-	margin-right: 5%;
 	padding-top: 2%;
 }
 
-#urlStyle button{
-	margin-top: 2%;
-	margin-right: 1%;
-	float: right;
+#urlStyle button {
 	background-color: rgb(191, 7, 55);
 	color: white;
+	float: right;
+	margin-left: 25%;
 }
 
-#urlStyle:hover button{
+#urlStyle:hover button {
 	background-color: lightgrey;
 	border: 1px darkgrey solid;
 }
