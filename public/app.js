@@ -14,8 +14,10 @@ var elSubmitButton = $('#submit');
 var elNextButton = $('#next');
 var elStartOver = $('#startOver');
 var elTripForward = $('#tripForward');
-var elTripBack = $('#tripBack')
+var elTripBack = $('#tripBack');
+var newAbilityLevel;
 var incMove = 0;
+var elCurrentTrip = 0;
 var state = {
 	currentStep: 0,
 	currentSelectionDate: [],
@@ -52,10 +54,10 @@ elStartOver.click( function(event) {
 });
 
 function progressbar() {
-    	$( "#progressbar" ).progressbar({
-     		 value: 37
-    	});
-  	};
+  $( "#progressbar" ).progressbar({
+    value: 37
+  });
+};
 
 elSubmitButton.click( function(event) {
 	progressbar();
@@ -72,6 +74,7 @@ function renderCurrentStep(currentStep) {
 		elCalendarBox.addClass('hidden');
 		currentSelectionDate();
 	}
+
 	if (state.currentStep == 2) {
 		elNextButton.addClass('hidden');
 		elSubmitButton.removeClass('hidden');
@@ -79,19 +82,22 @@ function renderCurrentStep(currentStep) {
 		elSkillLevelBox.addClass('hidden');
 		currentSelectionAbility();
 	}
+
 	if (state.currentStep == 3) {
 		elFinalReviewBox.addClass('hidden');
 		elTripBox.removeClass('hidden');
 	}
 };
+
 // change it to an object currentSelectionDate.date = jQuery Element
 // current selection state memory function
+
 function currentSelectionDate() {
 	state.currentSelectionDate.push( {
 		date: $('#datepicker').val()
 	});
 };
-var newAbilityLevel;
+
 function currentSelectionAbility() {
 	state.currentSelectionAbility.push( {
 		abilityLevel: $('#ability-level').val()
@@ -116,13 +122,18 @@ function getDataFromApi() {
 		date: state.currentSelectionDate[0],
 		abilityLevel: state.currentSelectionAbility[0]
 		})
+
 		.done( function(data) {
+		//forward and back toggle handle button logic	
+			var elLastTrip = data.trips.length;
+		//logic for "no results" response
 			if (data.trips[0] == undefined) {
 				$('#trip-wrapper').html(
 				'<div id="nameOfTripStyle" style="text-align: center; padding: 2%;"> \
 				Sorry, there are not any trips at that time.  Please search again!</div>'
 				)
 			}
+
 			else {
 			// creating variables to format the dates from the start date and end date arrays
 				var newTripListS = data.trips[incMove].startTrip;
@@ -157,12 +168,28 @@ function getDataFromApi() {
 
 // toggle buttons to search through trips that have been returned from the GET request
 elTripForward.click( function(event) {
-	incMove ++
-	elTripBack.removeClass('hidden');
+	incMove ++;
 	getDataFromApi();
+	console.log(elCurrentTrip);
+	elCurrentTrip++;
+	if (elCurrentTrip != 0) {
+		elTripBack.removeClass('hidden');
+	}
+	if (elCurrentTrip == elLastTrip-1) {
+		elTripForward.addClass('hidden');
+	}
 });
 
 elTripBack.click( function(event) {
 	incMove--;
 	getDataFromApi();
+	console.log(elCurrentTrip);
+	elCurrentTrip--;
+	if (elCurrentTrip != elLastTrip-1) {
+		elTripForward.removeClass('hidden');
+	}
+	if (elCurrentTrip == 0) {
+		elTripBack.addClass('hidden');
+	}
 });
+			

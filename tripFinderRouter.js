@@ -50,8 +50,6 @@ router.get('/', function(req, res, next) {
       dateRange.push(moment(date, "MM-DD-YYYY").add(12, 'd').format("MM/DD/YYYY"));
       dateRange.push(moment(date, "MM-DD-YYYY").add(13, 'd').format("MM/DD/YYYY"));
       dateRange.push(moment(date, "MM-DD-YYYY").add(14, 'd').format("MM/DD/YYYY"));
-
-  console.log(dateRange);
   /* original date array function work - not functional
   let tMin = moment.min(tMinus, tPlus).format("MM/DD/YYYY");
   let arrayTest = ["8/7/2017", "8/8/2017"];
