@@ -1,5 +1,5 @@
-/* Main Trip Finder Customer UI CSS Page
-
+/* 
+	Main Trip Finder Customer UI CSS Page
 	This CSS file is organized in a linear fashion for the most part.  The HTML corrisponds
 	with the linear function of this document.
 */
@@ -35,9 +35,7 @@ ul {
 
 #imgStyleDiv img {
 	float: left;
-	width: 40%;
-	height: 80%;
-	margin-top: 2;
+	width: 300px;
 	border: 2px solid lightgrey;
 	box-shadow: 1px 1px 1px 1px lightgrey;
 	margin-left: 2%;
@@ -256,6 +254,7 @@ a {
 	font-size: 12px;
 	float: right;
 	padding-top: 2%;
+	margin-left: 2%;
 }
 
 #abilityLevelStyle {
@@ -303,14 +302,21 @@ footer:hover a {
 #back-to-search {
 	background-color: rgb(191, 7, 55);
 	color: white;
+	margin-top: 10%;
 }
 
 #back-to-search a {
 	text-decoration: none;
 	color: white;
+
 }
 
 #back-to-search:hover {
 	background-color: lightgrey;
 	border: 1px darkgrey solid;
+}
+
+#logos img {
+	width: 100px;
+	margin-left: 2%;
 }

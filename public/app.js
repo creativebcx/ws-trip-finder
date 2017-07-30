@@ -114,6 +114,8 @@ function renderFinalReview(currentStep) {
 	};
 };
 
+var elLastTrip;
+
 // ajax GET request
 function getDataFromApi() {
 	var wsTripFinderAPI = "/trip-finder";
@@ -125,7 +127,7 @@ function getDataFromApi() {
 
 		.done( function(data) {
 		//forward and back toggle handle button logic	
-			var elLastTrip = data.trips.length;
+			elLastTrip = data.trips.length;
 		//logic for "no results" response
 			if (data.trips[0] == undefined) {
 				$('#trip-wrapper').html(
@@ -142,10 +144,10 @@ function getDataFromApi() {
 			// creating a new date list based off of items in the array
 			function createDateList(data) {	
 				$('#tripDatesStyle').append("<ul>Trip dates: </ul>");
-						for(var i in newTripListS) {
-    					var li = "<li>";
-    					$("ul").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
-						}				
+					for(var i in newTripListS) {
+    				var li = "<li>";
+    				$("ul").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
+					}				
 			};
 			
 			// returning the json object from the GET request to the user
