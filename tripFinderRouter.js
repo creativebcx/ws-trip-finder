@@ -17,10 +17,6 @@ router.use(function(req,res,next) {
 
 router.get('/', function(req, res, next) {
   let date = moment(req.query.date.date, 'MM-DD-YYYY');
-  //let tMinus = moment(date, "MM-DD-YYYY").subtract(14, 'd');
-  //let tPlus = moment(date, "MM-DD-YYYY").add(14, 'd');
-  //let tMax = [moment.max(tMinus, tPlus).format("MM/DD/YYYY")];
-  //let tMin = moment.min(tMinus, tPlus).unix(Number);
   
     let dateRange = [];
     for (var i=1; i<=14; i++) {
@@ -29,20 +25,8 @@ router.get('/', function(req, res, next) {
     }
     dateRange.push(moment(date, "MM-DD-YYYY").format("MM/DD/YYYY"));
 
-  /* original date array function work - not functional
-  let tMin = moment.min(tMinus, tPlus).format("MM/DD/YYYY");
-  let arrayTest = ["8/7/2017", "8/8/2017"];
-  function makeRange() {
-    let dateRange = [];
-    for (var i=tMin; i<=tMax; i) {
-      dateRange.push(i);
-    }
-    return dateRange;
-  };*/
-
   TripPackage
     .find({startTrip: {$in: dateRange}})
-    //.find()
     .limit(20)
     .exec()
     .then(Trips => {
