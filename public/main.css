@@ -267,11 +267,15 @@ a {
 	padding-top: 2%;
 }
 
+#infoStyle {
+	font-size: 12px;
+	float: right;
+}
+
 #urlButton {
 	background-color: rgb(191, 7, 55);
-	color: white;
-	float: right;
-	margin-left: 25%;
+	color: white;	
+	margin-left: 5%;
 }
 
 #urlStyle:hover button {
