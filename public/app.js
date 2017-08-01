@@ -164,8 +164,10 @@ function getDataFromApi() {
 				riding :) —push the "Find Out More" button to get started</div>'
 			);
 
+// TODO fix StartOver Button so that it refreshes screen
+
 			$('#controls-wrapper').html( 
-				'<button id="startOver">Start Over</button>' +
+				'<a href="index.html" target="_blank"><button id="startOver">Start Over</button></a>' +
 				'<a href="' + data.trips[incMove].url + 
 				'" target="_blank"><button id="urlButton">Find Out More!</button></a>'
 				);
