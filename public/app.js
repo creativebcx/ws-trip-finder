@@ -159,7 +159,7 @@ function getDataFromApi() {
 				'<div id="tripDatesStyle"></div>' +
 				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
 				'<div id="abilityLevelStyle">Experience Level: ' + data.trips[incMove].abilityLevel + '</div>' +
-				'<div id="urlStyle">Many of our guests find that a quick phone call to our team at 800-845-BIKE (2453) \
+				'<div id="urlStyle">*Many of our guests find that a quick phone call to our team at 800-845-BIKE (2453) \
 				is the most efficient way to meet their vacation goals—but if it is after business hours (and we are out \
 				riding :) —push the "Find Out More" button to get started<a href="' + data.trips[incMove].url + 
 				'" target="_blank"><button id="urlButton">Find Out More!</button></a></div>' +
