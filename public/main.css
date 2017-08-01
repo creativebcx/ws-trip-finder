@@ -66,12 +66,6 @@ ul {
 	height: 400px;
 	border-radius: 20px;
 	background-color: white;
-	/*
-	Background Image CSS
-	background-image: url(img/sunset1.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100%;*/
 	box-shadow: 1px 1px 1px 1px lightgrey;
 	border: 2px solid grey;
 }
@@ -127,9 +121,18 @@ ul {
 	padding-top: 5%;
 }
 
-#calendar-wrapper, input {
-	margin-top: 3%;
+#calendar-wrapper {
+	margin-top: 1%;
 	font-size: 20px;
+}
+
+div.ui-datepicker {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.ui-datepicker-header {
+	height: 30px;
 }
 
 #skill-level-wrapper {
@@ -264,7 +267,7 @@ a {
 	padding-top: 2%;
 }
 
-#urlStyle button {
+#urlButton {
 	background-color: rgb(191, 7, 55);
 	color: white;
 	float: right;
@@ -280,8 +283,8 @@ a {
 
 footer {
 	margin-top: 10%;
-	margin-right: 2%;
-	text-align: right;
+	bottom: 0px;
+	text-align: center;
 	font-family: 'Sacramento', cursive;
 	font-size: 24px;
 }

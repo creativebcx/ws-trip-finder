@@ -1,0 +1,199 @@
+/* This is the tablet and mobile css file for index.html */
+
+/* Tablet Response */
+@media (max-width: 1024px) {
+     
+  
+}
+
+/* Mobile Phone Response */
+@media (max-width: 600px) {
+  
+  header {
+    margin-top: 0px;
+    padding-top: 2%;
+    position: fixed;
+    font-size: 24px;
+    background-color: white;
+  }
+  
+  #logo-wrapper img {
+    margin-top: 20%;
+    width: 70px;
+  }
+
+  #landing-box {
+    margin-top: 30%;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 5%;
+    color: black;
+    font-size: 16px;
+    border: 2px solid grey;
+    border-radius: 20px;
+  }
+
+  #inner-box-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: none;
+    border: none;
+  }
+/* Button and Control section */
+  #controls-wrapper {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+  }
+
+  #startOver {
+    width: 47%;
+    float: left;
+    border-radius: 0px;
+  }
+
+  #next {
+    width: 47%;
+    float: right;
+    border-radius: 0px;
+  }
+
+  #submit {
+    width: 47%;
+    float: right;
+    border-radius: 0px;
+  }
+
+  #urlButton {
+    position: fixed;
+    bottom: 0px;
+    width: 47%;
+    margin-left: -25%;
+    margin-right: 10%;
+    float: none;
+    border-radius: 0px;
+  }
+/* TODO Fix Forward and Back Controls */
+  #trip-back-wrapper {
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  #tripBack {
+    width: 100%;
+    font-size: 60px;
+    padding: 0;
+    color: red;
+  }
+
+  #trip-forward-wrapper {
+    float: right;
+    margin-top: 0px;
+    margin-right: 0px;
+  } 
+
+  #tripForward {
+    width: 100%;
+    font-size: 60px;
+    padding: 0;
+    color: red;
+  }
+/* End Fix Forward and Back */
+
+  #calendar-wrapper {
+    font-size: 16px;
+  }
+
+  #skill-level-wrapper{
+    font-size: 16px;
+  }
+
+  form {
+    margin-top: 50px;
+    height: 100px;
+  }  
+
+  #final-review-wrapper {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  /* Mobile Trip wrapper sytling */
+  #nameOfTripStyle {
+    text-align: center;
+    font-size: 24px;
+    padding-right: 0%;
+  }
+
+  #imgStyleDiv img {
+    float: none;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  #descriptionStyle {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+  }
+  #locationExperienceDateUrlWrapper {
+    margin-top: 0%;
+    padding-bottom: 0%;
+    margin-right: 0%;
+    margin-left: 0%;
+  }
+  #tripDatesStyle {
+    font-size: 16px;
+    padding-left: 2%;
+    padding-right: 2%;
+    float: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  #locationStyle {
+    font-size: 16px;
+    float: none;
+    text-align: center;
+  }
+
+  #abilityLevelStyle {
+    font-size: 16px;
+    float: none;
+    text-align: center;
+  }
+
+  #urlStyle {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+    font-size: 14px;
+  }
+
+  #footer {
+    display: none; /* TODO - Get footer displaying properly */
+    margin-top: 150px;
+  }
+
+  footer a{
+    text-align: center;
+    bottom: 0px;
+  }
+}

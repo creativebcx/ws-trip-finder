@@ -143,7 +143,7 @@ function getDataFromApi() {
 
 			// creating a new date list based off of items in the array
 			function createDateList(data) {	
-				$('#tripDatesStyle').append("<ul>Trip dates: </ul>");
+				$('#tripDatesStyle').append("<ul>2017 Trip Dates: </ul>");
 					for(var i in newTripListS) {
     				var li = "<li>";
     				$("ul").append(li.concat(newTripListS[i] + " - " + newTripListE[i]))
@@ -159,8 +159,10 @@ function getDataFromApi() {
 				'<div id="tripDatesStyle"></div>' +
 				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
 				'<div id="abilityLevelStyle">Experience Level: ' + data.trips[incMove].abilityLevel + '</div>' +
-				'<div id="urlStyle"><a href="' + data.trips[incMove].url + 
-				'" target="_blank"><button>Find Out More!</button></a></div>' +
+				'<div id="urlStyle">Many of our guests find that a quick phone call to our team at 800-845-BIKE (2453) \
+				is the most efficient way to meet their vacation goals—but if it is after business hours (and we are out \
+				riding :) —push the "Find Out More" button to get started<a href="' + data.trips[incMove].url + 
+				'" target="_blank"><button id="urlButton">Find Out More!</button></a></div>' +
 				'</div>'
 			);
 			createDateList();

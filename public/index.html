@@ -3,8 +3,10 @@
 <head>
   <title>WS Trip Finder Wireframe</title>
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="mainmobile.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--<a href="http://www.freepik.com/free-photos-vectors/background">Background vector created by Freepik</a>-->
 </head>
 <body>
@@ -15,12 +17,12 @@
     <div id="trip-forward-wrapper"><button id="tripForward" class="hidden">></button></div>
     <div id="inner-box-wrapper">
       <div id="without-controls-wrapper">
-        <div id="landing-box">Find the trip that fits your interests.<br>
-          <button id="start" id="start-button">Find Your Trip!</button>
+        <div id="landing-box">Search for trips that fit your interests.<br>
+          <button id="start" id="start-button">Start Search</button>
         </div>
         <div id="calendar-wrapper" class="hidden">What day would you like to start your trip?
           <p>
-            <input type="text" id="datepicker" placeholder="Select Date">
+            <div type="text" id="datepicker" placeholder="Select Date"></div>
           </p>
         </div>
         <div id="skill-level-wrapper" class="hidden">What type of bike trip are you looking for?
