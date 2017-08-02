@@ -29,8 +29,8 @@
     padding: 5%;
     color: black;
     font-size: 16px;
-    border: 2px solid grey;
-    border-radius: 20px;
+    border: 0.5px solid lightgrey;
+    box-shadow: 1px 1px 1px 1px lightgrey;
   }
 
   #inner-box-wrapper {
@@ -45,38 +45,43 @@
   #controls-wrapper {
     width: 100%;
     position: fixed;
-    bottom: 0px;
+    bottom: 2px;
+    background-color: grey;
   }
 
   #startOver {
-    width: 47%;
+    width: 50%;
     float: left;
     border-radius: 0px;
+    border: 3px solid grey;
   }
 
   #next {
-    width: 47%;
+    width: 50%;
     float: right;
     border-radius: 0px;
+    margin: 0px;
+    border: 3px solid grey;
   }
 
   #submit {
-    width: 47%;
+    width: 50%;
     float: right;
     border-radius: 0px;
+    margin: 0px;
+    border: 3px solid grey;
   }
 
   #urlButton {
-    position: fixed;
-    bottom: 0px;
-    width: 47%;
-    margin-left: -12%;
-    margin-right: 10%;
-    float: none;
+    width: 50%;
+    float: right;
     border-radius: 0px;
+    margin: 0px;
+    border: 3px solid grey;
   }
 /* TODO Fix Forward and Back Controls */
   #trip-back-wrapper {
+    display: none;
     float: left;
     margin-top: 0px;
     margin-left: 0px;
@@ -90,6 +95,7 @@
   }
 
   #trip-forward-wrapper {
+    display: none;
     float: right;
     margin-top: 0px;
     margin-right: 0px;
@@ -119,9 +125,21 @@
   #final-review-wrapper {
     padding-top: 10%;
     padding-bottom: 10%;
+    margin-left: 4%;
+    margin-right: 4%;
+    font-size: 16px;
+    border: 0.5px solid lightgrey;
+    box-shadow: 1px 1px 1px 1px lightgrey;
   }
 
   /* Mobile Trip wrapper sytling */
+  #trip-wrapper {
+    margin-left: 3px;
+    margin-right: 3px;
+    border: 0.5px solid lightgrey;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+  }
+
   #nameOfTripStyle {
     text-align: center;
     font-size: 24px;
@@ -130,11 +148,11 @@
 
   #imgStyleDiv img {
     float: none;
-    width: 100%;
+    width: 90%;
     border: none;
     box-shadow: none;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #descriptionStyle {
@@ -176,16 +194,15 @@
   }
 
   #infoStyle {
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    border: 0.5px solid lightgrey;
+    margin-top: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
     margin-bottom: 50px;
-    color: black;
-    padding: 10px;
+    padding: 2%;
     text-align: center;
-    width: 90%;
     font-size: 14px;
+    box-shadow: 1px 1px 1px 1px lightgrey;
   }
 
   #footer {

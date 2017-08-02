@@ -159,15 +159,15 @@ function getDataFromApi() {
 				'<div id="tripDatesStyle"></div>' +
 				'<div id="locationStyle">Location: ' + data.trips[incMove].location + '</div>' +
 				'<div id="abilityLevelStyle">Experience Level: ' + data.trips[incMove].abilityLevel + '</div>' +
-				'<div id="infoStyle">*Many of our guests find that a quick phone call to our team at 800-845-BIKE (2453) \
-				is the most efficient way to meet their vacation goals—but if it is after business hours (and we are out \
-				riding :) —push the "Find Out More" button to get started</div>'
+				'<div id="infoStyle">Many of our guests find that a quick phone call to our team at 800-845-BIKE (2453) \
+				is the most efficient way to meet their vacation goals.  If it is after business hours \
+				push the "Find Out More" button to get started</div>'
 			);
 
 // TODO fix StartOver Button so that it refreshes screen
 
 			$('#controls-wrapper').html( 
-				'<a href="index.html" target="_blank"><button id="startOver">Start Over</button></a>' +
+				'<a href="index.html"><button id="startOver">Start Over</button></a>' +
 				'<a href="' + data.trips[incMove].url + 
 				'" target="_blank"><button id="urlButton">Find Out More!</button></a>'
 				);

@@ -129,6 +129,7 @@ ul {
 div.ui-datepicker {
 	margin-left: auto;
 	margin-right: auto;
+	box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 div.ui-datepicker-header {
@@ -145,11 +146,14 @@ div.ui-datepicker-header {
 	margin-top: 3%;
 }
 
+#ability-level {
+	border: 0.5px solid lightgrey;
+	box-shadow: 1px 1px 1px 1px lightgrey;
+}
+
 #ability-level, #skill-level-wrapper {
-	border: none;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 20px;
-
 }
 
 #ability-level:hover {
