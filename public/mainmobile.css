@@ -86,12 +86,14 @@
     position: relative;
     float: left;
     width: 50%;
+    bottom: 0px;
   }
 
   #tripForward {
     position: relative;
     float: right;
     width: 50%;
+    bottom: 0px;
   }
 
   img#arrow-right {
