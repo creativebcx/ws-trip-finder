@@ -161,7 +161,7 @@ function getDataFromApi() {
 				'<div id="abilityLevelStyle">Experience Level: ' + data.trips[incMove].abilityLevel + '</div>' +
 				'<div id="infoStyle">Many of our guests find that a quick phone call to our team at 800-845-BIKE (2453) \
 				is the most efficient way to meet their vacation goals.  If it is after business hours \
-				push the "Find Out More" button to get started</div>'
+				push the "Find Out More" button to get started.</div>'
 			);
 
 // TODO fix StartOver Button so that it refreshes screen

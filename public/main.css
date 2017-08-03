@@ -67,7 +67,7 @@ ul {
 	border-radius: 20px;
 	background-color: white;
 	box-shadow: 1px 1px 1px 1px lightgrey;
-	border: 2px solid grey;
+	/*border: 2px solid grey; */
 }
 
 #landing-box {
@@ -81,6 +81,7 @@ ul {
 	margin-top: 15%;
 	background-color: rgb(191, 7, 55);
 	color: white;
+	box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 #start:hover {
@@ -98,6 +99,7 @@ ul {
 	background-color: rgb(191, 7, 55);
 	color: white;
 	margin-left: 5%;
+	box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 #next:hover {
@@ -109,12 +111,36 @@ ul {
 	text-align: center;
 	background-color: rgb(191, 7, 55);
 	color: white;
+	box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 #startOver:hover {
 	background-color: lightgrey;
 	border: 1px darkgrey solid;
 }
+/* TODO Fix desktop formating for forward and back toggle */
+
+ #tripBack {
+    position: relative;
+    float: left;
+    bottom: 350px;
+    outline: none;
+  }
+
+  img#arrow-left {
+  	box-shadow: 1px 1px 1px 1px lightgrey;
+  }
+
+  #tripForward {
+    position: relative;
+    float: right;
+   	bottom: 350px;
+   	outline: none;
+  }
+
+  img#arrow-right {
+  	box-shadow: 1px 1px 1px 1px lightgrey;
+  }
 
 #calendar-wrapper {
 	margin-top: 5%;
@@ -167,6 +193,7 @@ div.ui-datepicker-header {
 	background-color: rgb(191, 7, 55);
 	color: white;
 	margin-left: 5%;
+	box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 #submit:hover {
@@ -199,38 +226,6 @@ div.ui-datepicker-header {
 	padding-right: 5%;
 	text-align: right;
 	margin-left: 45%;
-}
-
-#trip-back-wrapper {
-	float: left;
-	margin-top: 20%;
-	margin-left: 4%;
-}
-
-#tripBack {
-	width: 100%;
-	font-size: 60px;
-	padding: 0;
-}
-
-a {
-	outline: none;
-}
-
-#tripBack:hover {
-	color: lightgrey;
-}
-
-#trip-forward-wrapper {
-	float: right;
-	margin-top: 20%;
-	margin-right: 4%;
-}
-
-#tripForward {
-	width: 100%;
-	font-size: 60px;
-	padding: 0;
 }
 
 #tripForward:hover {
@@ -280,6 +275,7 @@ a {
 	background-color: rgb(191, 7, 55);
 	color: white;	
 	margin-left: 5%;
+	box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 #urlStyle:hover button {

@@ -30,6 +30,7 @@
     color: black;
     font-size: 16px;
     border: 0.5px solid lightgrey;
+    border-radius: 3px;
     box-shadow: 1px 1px 1px 1px lightgrey;
   }
 
@@ -80,32 +81,29 @@
     border: 3px solid grey;
   }
 /* TODO Fix Forward and Back Controls */
-  #trip-back-wrapper {
-    display: none;
-    float: left;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
 
   #tripBack {
-    width: 100%;
-    font-size: 60px;
-    padding: 0;
-    color: red;
+    position: relative;
+    float: left;
+    width: 50%;
   }
 
-  #trip-forward-wrapper {
-    display: none;
-    float: right;
-    margin-top: 0px;
-    margin-right: 0px;
-  } 
-
   #tripForward {
-    width: 100%;
-    font-size: 60px;
-    padding: 0;
-    color: red;
+    position: relative;
+    float: right;
+    width: 50%;
+  }
+
+  img#arrow-right {
+    margin-bottom: 50px;
+    border: 1px solid grey;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+  }
+
+  img#arrow-left {
+    margin-bottom: 50px;
+    border: 1px solid grey;
+    box-shadow: 1px 1px 1px 1px lightgrey;
   }
 /* End Fix Forward and Back */
 
@@ -128,6 +126,7 @@
     margin-left: 4%;
     margin-right: 4%;
     font-size: 16px;
+    border-radius: 3px;
     border: 0.5px solid lightgrey;
     box-shadow: 1px 1px 1px 1px lightgrey;
   }
@@ -136,6 +135,7 @@
   #trip-wrapper {
     margin-left: 3px;
     margin-right: 3px;
+    border-radius: 3px;
     border: 0.5px solid lightgrey;
     box-shadow: 1px 1px 1px 1px lightgrey;
   }
@@ -194,11 +194,12 @@
   }
 
   #infoStyle {
+    border-radius: 3px;
     border: 0.5px solid lightgrey;
     margin-top: 10px;
     margin-left: 3px;
     margin-right: 3px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     padding: 2%;
     text-align: center;
     font-size: 14px;
