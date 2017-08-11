@@ -23,7 +23,7 @@
   }
 
   #landing-box {
-    margin-top: 30%;
+    margin-top: 15%;
     margin-left: 4%;
     margin-right: 4%;
     padding: 5%;
@@ -85,15 +85,19 @@
   #tripBack {
     position: relative;
     float: left;
-    width: 50%;
+    width: 85px;
+    height: 85px;
     bottom: 0px;
+    z-index: -1;
   }
 
   #tripForward {
     position: relative;
     float: right;
-    width: 50%;
+    width: 85px;
+    height: 85px;
     bottom: 0px;
+    z-index: -1;
   }
 
   img#arrow-right {

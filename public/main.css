@@ -125,6 +125,7 @@ ul {
     float: left;
     bottom: 350px;
     outline: none;
+    margin-left: 2%;
   }
 
   img#arrow-left {
@@ -136,6 +137,7 @@ ul {
     float: right;
    	bottom: 350px;
    	outline: none;
+   	margin-right: 2%;
   }
 
   img#arrow-right {
