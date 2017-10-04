@@ -72,13 +72,13 @@ ul {
 
 #landing-box {
 	margin-top: 5%;
-	padding: 5%;
+	padding: 15%;
 	color: black;
 	font-size: 20px;
 }
 
 #start {
-	margin-top: 15%;
+	margin-top: 10%;
 	background-color: rgb(191, 7, 55);
 	color: white;
 	box-shadow: 1px 1px 1px 1px lightgrey;
